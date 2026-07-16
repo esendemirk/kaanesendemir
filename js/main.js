@@ -1,20 +1,21 @@
 /**
  * Kaan Esendemir — site config + panel router
- * Paste real Buttondown (or similar) endpoint when ready.
  * Keep SITE_VERSION in sync with /VERSION (semver).
  */
-const SITE_VERSION = "0.5.0";
+const SITE_VERSION = "0.6.0";
 
 const CONFIG = {
   linkedIn: "https://www.linkedin.com/in/kaanesendemir/",
 };
 
-const PANELS = ["home", "approach", "book", "about"];
+const PANELS = ["home", "approach", "about"];
 
 function panelFromHash() {
   const raw = (location.hash || "#home").replace(/^#/, "").toLowerCase();
-  // Legacy hashes from earlier site versions
-  if (raw === "workshops" || raw === "join" || raw === "learn") return "approach";
+  // Legacy hashes
+  if (raw === "workshops" || raw === "join" || raw === "learn" || raw === "book") {
+    return "approach";
+  }
   return PANELS.includes(raw) ? raw : "home";
 }
 
@@ -49,9 +50,6 @@ function setPanel(id, { pushHash = true } = {}) {
       history.replaceState(null, "", next);
     }
   }
-
-  const active = document.querySelector(`[data-panel="${id}"]`);
-  if (active) active.scrollTop = 0;
 }
 
 function wireNav() {

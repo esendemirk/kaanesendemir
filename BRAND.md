@@ -1,7 +1,7 @@
 # Brand — Kaan Esendemir
 
 ## Positioning
-- **Site primary:** Kaan as a trusted tech leader — careful **enterprise AI adoption** consulting (trust → hire)
+- **Site primary:** AI Application Architect + educator who **drives AI adoption** (LinkedIn CTA; no book on site for now)
 - Book 1: ***Careful with AI*** — *What I've Learned Driving Adoption*
 - Book angle: personal AI adoption + driving it for others + tips/tricks (not Learn with Kaan teaching jacket)
 - Slogan: **You can be careful and still begin.**
