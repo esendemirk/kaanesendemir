@@ -2,15 +2,15 @@
 
 ## Positioning
 - **Site primary:** Kaan as a trusted tech leader — careful **enterprise AI adoption** consulting (trust → hire)
-- Series (education / book / media): **Learn with Kaan**
-- Book 1 (in progress): ***Careful with AI*** — *Learn AI Without the Pressure*
+- Series / teaching brand: **Learn with Kaan** (optional wrapper for book)
+- Book 1 (in progress): ***Careful with AI*** — experience + tips on **driving AI adoption** (personal use + helping others start)
 - Slogan: **You can be careful and still begin.**
 - Supporting line: No rush. No jargon. No shame.
-- Cred (site/press): Application Architect · Adjunct Professor · Author, *Learn with Kaan*
-- Bylines: **Gets careful people started with AI.** (also enterprises / hesitant teams)
+- Cred (site/press): Application Architect · Adjunct Professor · Author
+- Bylines: **Gets careful people started with AI.**
 - Primary CTA (site): **Talk with me / Hire me** (email + LinkedIn)
 - Secondary: book under construction; email list later
-- Monetization: consulting first; book/media later
+- Monetization: consulting first; book supports trust/notability
 
 ## Versioning
 
@@ -18,23 +18,19 @@
 - Site footer shows `vX.Y.Z` via `SITE_VERSION` in `js/main.js` (keep in sync)
 - Ship by default: bump → commit → push (see `.cursor/rules/ship.mdc`)
 
-## Book 1 (locked)
+## Book 1 (direction locked — manuscript open)
 
 | Field | Value |
 |-------|--------|
-| Series | Learn with Kaan |
-| Title | Careful with AI |
-| Subtitle | Learn AI Without the Pressure |
-| Format | Short illustrated teaching book (picture-book energy, ~32–64 pages) |
-| Audience | Middle school → seniors; hesitant / careful beginners |
-| Pedagogy | Permission → tiny try → check your judgment → repeat |
-| Cover series line | A Learn with Kaan book |
-| Cover explorations | `assets/covers/` — leading **A3** (Soft Citron “AI” + teacher chat dialogue) |
+| Working title | Careful with AI |
+| Subtitle | Learn AI Without the Pressure (may evolve) |
+| Format | Practical nonfiction — experience, adoption stories, tips & tricks |
+| Core | Adopting AI yourself + driving adoption for hesitant people/teams |
+| Audience | Careful professionals, leaders, and teams |
+| Outline | [`brand-system/BOOK-1.md`](brand-system/BOOK-1.md) |
+| Covers | Earlier picture-book comps archived in `assets/covers/` |
 
-**Book 2 (later):** prompting craft under the same series.  
-**Media (later):** *Learn with Kaan* cartoon episodes adapted from book spreads.
-
-Retired working titles: *It's Okay to Be Careful*, *AI for All*.
+Retired directions: all-ages picture book; *It's Okay to Be Careful*; *AI for All*.
 
 ## Forever color & type
 
@@ -56,9 +52,9 @@ Full tokens, CSS, and type rules: [`brand-system/COLORS-AND-TYPE.md`](brand-syst
 - Flatter stickers are **derivatives** of this face (same geometry, less shade)
 
 ## Speakable
-- Teaching AI fluency to **all ages** (kids through seniors)
-- **Hesitation is welcome** — careful starters, directors, grandparents
-- Everyday life uses (not coding textbooks)
+- Driving **careful AI adoption** (enterprises + hesitant teams)
+- Personal lessons from adopting AI yourself (patterns, not secrets)
+- Tips, habits, and judgment checks that help people start
 - *Careful with AI* / *Learn with Kaan*
 - Application Architect + Adjunct Professor titles
 
@@ -66,14 +62,14 @@ Full tokens, CSS, and type rules: [`brand-system/COLORS-AND-TYPE.md`](brand-syst
 - Employer internals, PoCs, confidential tooling or metrics
 - Research / preprint / IP callouts on this brand surface
 - Workshop / membership hard-sell (not the center for now)
-- Old working titles as the book name (*It's Okay to Be Careful*, *AI for All*)
+- Old picture-book positioning as the current book promise
 
 ## Integrations (later)
 - Email list → `CONFIG.fieldNotesEndpoint` in `js/main.js` (Buttondown or similar)
 
 ## LinkedIn
-Headline direction: `Learn with Kaan · Careful with AI · Adjunct Professor`  
-CTA posts → `https://kaanesendemir.com/` (join the list)
+Headline direction: `Careful AI Adoption · Application Architect · Adjunct Professor`  
+CTA posts → `https://kaanesendemir.com/` (contact / hire)
 
 ## Notability note
-ISBN + Google Books + Amazon Author Central + consistent author bio + press. Hesitation-niche illustrated book + *Learn with Kaan* media later feed the Author entity for Knowledge Panel.
+ISBN + Google Books + Amazon Author Central + consistent author bio + press. Experience book on careful AI adoption + consulting presence feed the Author / Person entity for Knowledge Panel.
