@@ -2,7 +2,7 @@
  * Kaan Esendemir — site config + panel router
  * Keep SITE_VERSION in sync with /VERSION (semver).
  */
-const SITE_VERSION = "0.6.0";
+const SITE_VERSION = "0.6.1";
 
 const CONFIG = {
   linkedIn: "https://www.linkedin.com/in/kaanesendemir/",
