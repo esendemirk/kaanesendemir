@@ -6,7 +6,8 @@
 - Subtitle: *Learn AI Without the Pressure*
 - Slogan: **You can be careful and still begin.**
 - Supporting line: No rush. No jargon. No shame.
-- Cred: Application Architect · Adjunct Professor · Author, *Learn with Kaan*
+- Cred (site/press): Application Architect · Adjunct Professor · Author, *Learn with Kaan*
+- Back-cover byline (under name): **Gets careful people started with AI.**
 - Primary CTA: **email list** (teaching notes + book updates)
 - Monetization: deferred
 
