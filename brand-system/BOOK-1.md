@@ -52,9 +52,14 @@ Draft concepts in `assets/covers/` (not final):
 
 Keep author name off the bubbles — name already appears as series/author credit.
 
-**Back (`cover-a3-back.png`):** series line · permission blurb · three beats · slogan · mascot peek · author block · ISBN placeholder.
+**Back (`cover-a3-back.png`):** series line · permission blurb · three invitation lines (no bullets) · slogan · mascot peek · author block · ISBN placeholder.
 
-**Author byline (under name, no job titles):** `Gets careful people started with AI.`
+**Back invitation lines (no bullets):**
+1. Give it a try.
+2. Don't be scared.
+3. Get comfortable.
+
+**Author byline (under name, smaller muted type, no job titles):** `Gets careful people started with AI.`
 
 **Cover rules:** “AI” in the title is Soft Citron `#D4E157`. Chat bubbles only — no devices. Teacher pose, hands free. Skip long help lines (too small in print).
 
