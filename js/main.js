@@ -3,19 +3,19 @@
  * Paste real Buttondown (or similar) endpoint when ready.
  * Keep SITE_VERSION in sync with /VERSION (semver).
  */
-const SITE_VERSION = "0.2.5";
+const SITE_VERSION = "0.3.0";
 
 const CONFIG = {
   /** e.g. https://buttondown.com/api/emails/embed-subscribe/YOUR_USER */
   fieldNotesEndpoint: null,
 };
 
-const PANELS = ["home", "learn", "book", "about"];
+const PANELS = ["home", "approach", "book", "about"];
 
 function panelFromHash() {
   const raw = (location.hash || "#home").replace(/^#/, "").toLowerCase();
   // Legacy hashes from earlier site versions
-  if (raw === "workshops" || raw === "join") return "book";
+  if (raw === "workshops" || raw === "join" || raw === "learn") return "approach";
   return PANELS.includes(raw) ? raw : "home";
 }
 

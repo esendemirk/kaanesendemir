@@ -1,15 +1,16 @@
 # Brand — Kaan Esendemir
 
 ## Positioning
-- Series: **Learn with Kaan**
-- Book 1: ***Careful with AI***
-- Subtitle: *Learn AI Without the Pressure*
+- **Site primary:** Kaan as a trusted tech leader — careful **enterprise AI adoption** consulting (trust → hire)
+- Series (education / book / media): **Learn with Kaan**
+- Book 1 (in progress): ***Careful with AI*** — *Learn AI Without the Pressure*
 - Slogan: **You can be careful and still begin.**
 - Supporting line: No rush. No jargon. No shame.
 - Cred (site/press): Application Architect · Adjunct Professor · Author, *Learn with Kaan*
-- Back-cover byline (under name): **Gets careful people started with AI.**
-- Primary CTA: **email list** (teaching notes + book updates)
-- Monetization: deferred
+- Bylines: **Gets careful people started with AI.** (also enterprises / hesitant teams)
+- Primary CTA (site): **Talk with me / Hire me** (email + LinkedIn)
+- Secondary: book under construction; email list later
+- Monetization: consulting first; book/media later
 
 ## Versioning
 
