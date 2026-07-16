@@ -2,15 +2,15 @@
 
 ## Positioning
 - **Site primary:** Kaan as a trusted tech leader — careful **enterprise AI adoption** consulting (trust → hire)
-- Series / teaching brand: **Learn with Kaan** (optional wrapper for book)
-- Book 1 (in progress): ***Careful with AI*** — experience + tips on **driving AI adoption** (personal use + helping others start)
+- Book 1: ***Careful with AI*** — *What I've Learned Driving Adoption*
+- Book angle: personal AI adoption + driving it for others + tips/tricks (not Learn with Kaan teaching jacket)
 - Slogan: **You can be careful and still begin.**
-- Supporting line: No rush. No jargon. No shame.
 - Cred (site/press): Application Architect · Adjunct Professor · Author
 - Bylines: **Gets careful people started with AI.**
 - Primary CTA (site): **LinkedIn only** (no email/phone on the surface — anti-scrape)
 - Secondary: book under construction
 - Monetization: consulting first; book supports trust/notability
+- *Learn with Kaan*: optional later media/teaching brand — **not** on this book cover
 
 ## Versioning
 
@@ -18,19 +18,19 @@
 - Site footer shows `vX.Y.Z` via `SITE_VERSION` in `js/main.js` (keep in sync)
 - Ship by default: bump → commit → push (see `.cursor/rules/ship.mdc`)
 
-## Book 1 (direction locked — manuscript open)
+## Book 1 (cover direction locked — manuscript open)
 
 | Field | Value |
 |-------|--------|
-| Working title | Careful with AI |
-| Subtitle | Learn AI Without the Pressure (may evolve) |
+| Title | Careful with AI |
+| Subtitle | What I've Learned Driving Adoption |
 | Format | Practical nonfiction — experience, adoption stories, tips & tricks |
 | Core | Adopting AI yourself + driving adoption for hesitant people/teams |
 | Audience | Careful professionals, leaders, and teams |
 | Outline | [`brand-system/BOOK-1.md`](brand-system/BOOK-1.md) |
-| Covers | Earlier picture-book comps archived in `assets/covers/` |
+| Covers | `assets/covers/cover-exp-front.png` · `cover-exp-back.png` |
 
-Retired directions: all-ages picture book; *It's Okay to Be Careful*; *AI for All*.
+Retired: picture-book / Learn with Kaan jacket; *Learn AI Without the Pressure* as subtitle; *It's Okay to Be Careful*; *AI for All* as book name.
 
 ## Forever color & type
 

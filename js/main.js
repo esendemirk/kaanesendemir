@@ -3,7 +3,7 @@
  * Paste real Buttondown (or similar) endpoint when ready.
  * Keep SITE_VERSION in sync with /VERSION (semver).
  */
-const SITE_VERSION = "0.4.1";
+const SITE_VERSION = "0.5.0";
 
 const CONFIG = {
   linkedIn: "https://www.linkedin.com/in/kaanesendemir/",

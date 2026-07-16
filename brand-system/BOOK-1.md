@@ -1,22 +1,25 @@
 # Careful with AI
 
-**Working title** · *Learn AI Without the Pressure* (subtitle may evolve)
+**Subtitle (locked for cover):** *What I've Learned Driving Adoption*
 
-## Direction (current)
-A practical experience book — not a children’s picture book.
+## Direction
+Practical nonfiction from the field — **not** a Learn with Kaan teaching / picture book.
 
-You write from **doing it yourself** and **driving adoption for others**: what worked, what stalled, how hesitant people (including coworkers and leaders) actually get started, plus tips and tricks you can share without employer confidential detail.
+You write from:
+1. **Adopting AI yourself** — how you learn, experiment, and stay careful  
+2. **Driving adoption for others** — hesitant coworkers, leaders, teams  
+3. **Tips & tricks** that travel — habits, prompts, checks, judgment  
 
 ## Promise
-Help careful professionals and teams adopt AI without the pressure — grounded in real adoption stories and repeatable moves.
+Help careful professionals and teams start with AI without the pressure — grounded in your experience and repeatable moves.
 
 ## Audience
 - Enterprise leaders and ICs who feel behind or cautious  
 - Teams stuck between hype and fear  
-- Anyone who wants field-tested tips, not another tool dump  
+- Readers who want field notes, not another tool dump  
 
 ## Format
-Short, readable nonfiction (essay + playbook energy). Chapters over spreads. Mascot optional as a light brand accent — not the core format.
+Short, readable nonfiction (essay + playbook). Chapters, not picture-book spreads. Mascot may appear as a light brand accent on the cover only.
 
 ## Chapter map (draft)
 
@@ -31,17 +34,25 @@ Short, readable nonfiction (essay + playbook energy). Chapters over spreads. Mas
 | 7 | Making adoption stick | Rituals, ownership, “you stay in charge” |
 | 8 | What’s next | How readers begin this week |
 
-Exact chapter titles flex in drafting.
-
 ## Voice
-Teacher who has scars and receipts — warm, direct, no hype, no shame.
+Practitioner with scars and receipts — warm, direct, no hype, no shame.
 
-## Constraints (brand)
+## Constraints
 - No employer internals, PoCs, confidential tooling, or metrics  
-- Prefer patterns and anonymized lessons over named case studies unless cleared  
+- Prefer patterns and anonymized lessons  
 
-## Cover explorations
-Earlier illustrated-cover work lives in `assets/covers/` (A3 front/back, etc.) as **archived direction**. New cover treatment TBD when the manuscript voice is clearer.
+## Cover (current)
+
+| Side | File | Notes |
+|------|------|--------|
+| Front | `assets/covers/cover-exp-front.png` | Soft Citron “AI”; subtitle; no Learn with Kaan |
+| Back | `assets/covers/cover-exp-back.png` | Experience blurb; invitations; small byline |
+
+**Eyebrow:** Experience · Tips · Adoption  
+**Author byline:** Gets careful people started with AI.  
+**Slogan:** You can be careful and still begin.
+
+Archived picture-book comps remain in `assets/covers/cover-a*` for reference only.
 
 ## Series
-May still sit under **Learn with Kaan** as the teaching brand, or stand alone under your name for the consulting/notability lane. Decide at outline lock.
+Standalone under **Kaan Esendemir** for the consulting / notability lane. *Learn with Kaan* is not on the jacket.
