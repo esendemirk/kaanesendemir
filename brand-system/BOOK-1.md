@@ -45,12 +45,14 @@ Draft concepts in `assets/covers/` (not final):
 | B | `cover-b-kitchen-table.png` | Kitchen-table scene |
 | C | `cover-c-type-hero.png` | Type hero + Soft Citron field |
 
-**Cover dialogue (short — must read at thumbnail size):**
+**Front dialogue (short — must read at thumbnail size):**
 1. Citron (guide): `How can I help?`
 2. Muted (learner): `I'm scared of AI.`
 3. Citron (guide): `Don't be. We'll go slow.`
 
 Keep author name off the bubbles — name already appears as series/author credit.
+
+**Back (`cover-a3-back.png`):** series line · permission blurb · three beats · slogan · mascot peek · author credit · ISBN placeholder.
 
 **Cover rules:** “AI” in the title is Soft Citron `#D4E157`. Chat bubbles only — no devices. Teacher pose, hands free. Skip long help lines (too small in print).
 
