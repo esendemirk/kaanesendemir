@@ -1,16 +1,8 @@
----
-name: kaan-brand-system
-description: >-
-  Applies Kaan Esendemir's forever brand system—Soft Citron accent, near-black
-  neutrals, and Inter typography—for consistent UI in this project. Use when
-  creating or restyling pages, components, or any UI where brand colors, fonts,
-  or design tokens are needed; also when the user mentions Soft Citron, brand
-  palette, or visual consistency.
----
+# Brand system — colors & type
 
-# Kaan Brand System
-
-Use this palette and type stack on **all** UI in this repo unless the user explicitly overrides.
+Forever visual system for Kaan Esendemir / Soft Citron / Learn with Kaan.  
+Use on **all** UI in this repo unless explicitly overridden.  
+(Not a Cursor skill — plain repo docs. A global brand repo can absorb this later.)
 
 ## Color tokens (locked)
 
@@ -76,8 +68,6 @@ font-family: Inter, "Open Sans", "Segoe UI", system-ui, sans-serif;
 
 ## New UI checklist
 
-When adding or restyling UI in this project:
-
 1. Use the CSS variables above (see also `css/styles.css`).
 2. Keep `font-family` on the Inter stack; wire Inter load if missing.
 3. Map primary CTA / focus / key marks to `--accent` + `--accent-text`.
@@ -86,5 +76,5 @@ When adding or restyling UI in this project:
 
 ## Related
 
-Positioning and speakable/unspeakable copy: [BRAND.md](../../BRAND.md).  
-This skill owns **visual system only** (color + type). A centralized global brand repo can absorb this later.
+- Positioning / speakable copy: [`BRAND.md`](../BRAND.md)
+- Mascot face lock & poses: [`assets/mascot/CHARACTER.md`](../assets/mascot/CHARACTER.md)

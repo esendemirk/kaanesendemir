@@ -1,7 +1,10 @@
 /**
  * Kaan Esendemir — site config + panel router
  * Paste real Buttondown (or similar) endpoint when ready.
+ * Keep SITE_VERSION in sync with /VERSION (semver).
  */
+const SITE_VERSION = "0.1.0";
+
 const CONFIG = {
   /** e.g. https://buttondown.com/api/emails/embed-subscribe/YOUR_USER */
   fieldNotesEndpoint: null,
@@ -118,7 +121,16 @@ function wireFieldNotes() {
   });
 }
 
+function paintVersion() {
+  document.querySelectorAll("[data-site-version]").forEach((el) => {
+    el.textContent = `v${SITE_VERSION}`;
+  });
+  const year = document.getElementById("year");
+  if (year) year.textContent = String(new Date().getFullYear());
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  paintVersion();
   wireNav();
   wireFieldNotes();
   setPanel(panelFromHash(), { pushHash: true });
