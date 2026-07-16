@@ -23,15 +23,9 @@ Or open `index.html` directly (hash routing still works).
    - **Build output directory:** `/` (repo root)
 4. Attach custom domain **kaanesendemir.com**.
 
-## Wire email list later
+## Contact
 
-Edit `js/main.js` → `CONFIG`:
-
-```js
-fieldNotesEndpoint: "https://buttondown.com/api/emails/embed-subscribe/USER",
-```
-
-Primary CTA is the email list (book + teaching updates). Monetization deferred.
+Primary CTA is **LinkedIn** only — no email or phone on the site (anti-scrape).
 
 ## Design tokens
 

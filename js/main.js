@@ -3,11 +3,10 @@
  * Paste real Buttondown (or similar) endpoint when ready.
  * Keep SITE_VERSION in sync with /VERSION (semver).
  */
-const SITE_VERSION = "0.4.0";
+const SITE_VERSION = "0.4.1";
 
 const CONFIG = {
-  /** e.g. https://buttondown.com/api/emails/embed-subscribe/YOUR_USER */
-  fieldNotesEndpoint: null,
+  linkedIn: "https://www.linkedin.com/in/kaanesendemir/",
 };
 
 const PANELS = ["home", "approach", "book", "about"];
@@ -19,7 +18,7 @@ function panelFromHash() {
   return PANELS.includes(raw) ? raw : "home";
 }
 
-function setPanel(id, { pushHash = true, focusEmail = false } = {}) {
+function setPanel(id, { pushHash = true } = {}) {
   if (!PANELS.includes(id)) id = "home";
 
   document.querySelectorAll("[data-panel]").forEach((el) => {
@@ -53,12 +52,6 @@ function setPanel(id, { pushHash = true, focusEmail = false } = {}) {
 
   const active = document.querySelector(`[data-panel="${id}"]`);
   if (active) active.scrollTop = 0;
-
-  if (focusEmail) {
-    requestAnimationFrame(() => {
-      document.getElementById("field-notes-email")?.focus();
-    });
-  }
 }
 
 function wireNav() {
@@ -67,57 +60,12 @@ function wireNav() {
       const id = el.getAttribute("data-nav");
       if (!id || !PANELS.includes(id)) return;
       e.preventDefault();
-      const focusEmail = el.hasAttribute("data-focus-email");
-      setPanel(id, { focusEmail });
+      setPanel(id);
     });
   });
 
   window.addEventListener("hashchange", () => {
     setPanel(panelFromHash(), { pushHash: false });
-  });
-}
-
-function wireFieldNotes() {
-  const form = document.getElementById("field-notes-form");
-  if (!form) return;
-  const status = document.getElementById("field-notes-status");
-  const input = document.getElementById("field-notes-email");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const email = (input?.value || "").trim();
-    if (!email || !input.checkValidity()) {
-      form.dataset.state = "err";
-      if (status) status.textContent = "Enter a valid email to join the list.";
-      input?.focus();
-      return;
-    }
-
-    if (!CONFIG.fieldNotesEndpoint) {
-      form.dataset.state = "ok";
-      if (status) {
-        status.textContent = "Thanks — list signup will go live with the email provider soon.";
-      }
-      form.reset();
-      return;
-    }
-
-    try {
-      const body = new FormData();
-      body.append("email", email);
-      const res = await fetch(CONFIG.fieldNotesEndpoint, {
-        method: "POST",
-        body,
-        mode: "cors",
-      });
-      if (!res.ok) throw new Error("subscribe failed");
-      form.dataset.state = "ok";
-      if (status) status.textContent = "You’re on the list. Talk soon.";
-      form.reset();
-    } catch {
-      form.dataset.state = "err";
-      if (status) status.textContent = "Couldn’t subscribe right now. Try again later.";
-    }
   });
 }
 
@@ -132,6 +80,5 @@ function paintVersion() {
 document.addEventListener("DOMContentLoaded", () => {
   paintVersion();
   wireNav();
-  wireFieldNotes();
   setPanel(panelFromHash(), { pushHash: true });
 });

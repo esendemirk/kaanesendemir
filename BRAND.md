@@ -8,8 +8,8 @@
 - Supporting line: No rush. No jargon. No shame.
 - Cred (site/press): Application Architect · Adjunct Professor · Author
 - Bylines: **Gets careful people started with AI.**
-- Primary CTA (site): **Talk with me / Hire me** (email + LinkedIn)
-- Secondary: book under construction; email list later
+- Primary CTA (site): **LinkedIn only** (no email/phone on the surface — anti-scrape)
+- Secondary: book under construction
 - Monetization: consulting first; book supports trust/notability
 
 ## Versioning
@@ -69,7 +69,7 @@ Full tokens, CSS, and type rules: [`brand-system/COLORS-AND-TYPE.md`](brand-syst
 
 ## LinkedIn
 Headline direction: `Careful AI Adoption · Application Architect · Adjunct Professor`  
-CTA posts → `https://kaanesendemir.com/` (contact / hire)
+CTA posts → `https://kaanesendemir.com/` → LinkedIn
 
 ## Notability note
 ISBN + Google Books + Amazon Author Central + consistent author bio + press. Experience book on careful AI adoption + consulting presence feed the Author / Person entity for Knowledge Panel.
