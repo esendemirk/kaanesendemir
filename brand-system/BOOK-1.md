@@ -46,9 +46,11 @@ Draft concepts in `assets/covers/` (not final):
 | C | `cover-c-type-hero.png` | Type hero + Soft Citron field |
 
 **Cover dialogue (short — must read at thumbnail size):**
-1. Citron (Kaan): `Hi, I'm Kaan.`
+1. Citron (guide): `How can I help?`
 2. Muted (learner): `I'm scared of AI.`
-3. Citron (Kaan): `Don't be. We'll go slow.`
+3. Citron (guide): `Don't be. We'll go slow.`
+
+Keep author name off the bubbles — name already appears as series/author credit.
 
 **Cover rules:** “AI” in the title is Soft Citron `#D4E157`. Chat bubbles only — no devices. Teacher pose, hands free. Skip long help lines (too small in print).
 
