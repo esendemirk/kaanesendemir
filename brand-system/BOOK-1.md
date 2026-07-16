@@ -1,7 +1,7 @@
 # Careful with AI
 
 **A Learn with Kaan book**  
-*A Gentle Start for Everyday Life*
+*Learn AI Without the Pressure*
 
 Slogan: **You can be careful and still begin.**
 
@@ -39,12 +39,13 @@ Draft concepts in `assets/covers/` (not final):
 
 | ID | File | Idea |
 |----|------|------|
-| A2 | `cover-a2-citron-glow-laptop.png` | **Leading:** A layout + C glow + book + laptop chat UI |
-| A | `cover-a-citron-book.png` | Dark field + mascot with Soft Citron hardcover |
-| B | `cover-b-kitchen-table.png` | Kitchen-table / everyday life scene |
-| C | `cover-c-type-hero.png` | Large type + Soft Citron field + wave |
+| A3 | `cover-a3-teacher-chat.png` | **Leading:** teacher pose + floating chat bubbles + citron glow |
+| A2 | `cover-a2-citron-glow-laptop.png` | Retired (laptop prop) |
+| A | `cover-a-citron-book.png` | Dark field + Soft Citron hardcover |
+| B | `cover-b-kitchen-table.png` | Kitchen-table scene |
+| C | `cover-c-type-hero.png` | Type hero + Soft Citron field |
 
-**AI prop note:** Prefer a calm chat UI on a laptop/phone over robots, brains, or circuit art. Chat = “talking to AI” for careful beginners.
+**AI prop note:** Floating chat bubbles only — no branded devices. Teacher pose, hands free.
 
 ## Series
 Future titles stay under **Learn with Kaan** (e.g. prompting book). Cartoon episodes map 1:1 to “Try this” spreads.

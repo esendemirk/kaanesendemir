@@ -3,7 +3,7 @@
 ## Positioning
 - Series: **Learn with Kaan**
 - Book 1: ***Careful with AI***
-- Subtitle: *A Gentle Start for Everyday Life*
+- Subtitle: *Learn AI Without the Pressure*
 - Slogan: **You can be careful and still begin.**
 - Supporting line: No rush. No jargon. No shame.
 - Cred: Application Architect · Adjunct Professor · Author, *Learn with Kaan*
@@ -22,7 +22,7 @@
 |-------|--------|
 | Series | Learn with Kaan |
 | Title | Careful with AI |
-| Subtitle | A Gentle Start for Everyday Life |
+| Subtitle | Learn AI Without the Pressure |
 | Format | Short illustrated teaching book (picture-book energy, ~32–64 pages) |
 | Audience | Middle school → seniors; hesitant / careful beginners |
 | Pedagogy | Permission → tiny try → check your judgment → repeat |
