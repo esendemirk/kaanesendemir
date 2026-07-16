@@ -39,9 +39,12 @@ Draft concepts in `assets/covers/` (not final):
 
 | ID | File | Idea |
 |----|------|------|
+| A2 | `cover-a2-citron-glow-laptop.png` | **Leading:** A layout + C glow + book + laptop chat UI |
 | A | `cover-a-citron-book.png` | Dark field + mascot with Soft Citron hardcover |
 | B | `cover-b-kitchen-table.png` | Kitchen-table / everyday life scene |
 | C | `cover-c-type-hero.png` | Large type + Soft Citron field + wave |
+
+**AI prop note:** Prefer a calm chat UI on a laptop/phone over robots, brains, or circuit art. Chat = “talking to AI” for careful beginners.
 
 ## Series
 Future titles stay under **Learn with Kaan** (e.g. prompting book). Cartoon episodes map 1:1 to “Try this” spreads.
