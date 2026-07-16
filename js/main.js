@@ -3,7 +3,7 @@
  * Paste real Buttondown (or similar) endpoint when ready.
  * Keep SITE_VERSION in sync with /VERSION (semver).
  */
-const SITE_VERSION = "0.2.0";
+const SITE_VERSION = "0.2.1";
 
 const CONFIG = {
   /** e.g. https://buttondown.com/api/emails/embed-subscribe/YOUR_USER */

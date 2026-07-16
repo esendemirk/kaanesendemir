@@ -39,13 +39,18 @@ Draft concepts in `assets/covers/` (not final):
 
 | ID | File | Idea |
 |----|------|------|
-| A3 | `cover-a3-teacher-chat.png` | **Leading:** teacher pose + floating chat bubbles + citron glow |
+| A3 | `cover-a3-teacher-chat.png` | **Leading:** Soft Citron “AI” + teacher + dialogue bubbles |
 | A2 | `cover-a2-citron-glow-laptop.png` | Retired (laptop prop) |
 | A | `cover-a-citron-book.png` | Dark field + Soft Citron hardcover |
 | B | `cover-b-kitchen-table.png` | Kitchen-table scene |
 | C | `cover-c-type-hero.png` | Type hero + Soft Citron field |
 
-**AI prop note:** Floating chat bubbles only — no branded devices. Teacher pose, hands free.
+**Cover dialogue (short — must read at thumbnail size):**
+1. Citron (Kaan): `Hi, I'm Kaan.`
+2. Muted (learner): `I'm scared of AI.`
+3. Citron (Kaan): `Don't be. We'll go slow.`
+
+**Cover rules:** “AI” in the title is Soft Citron `#D4E157`. Chat bubbles only — no devices. Teacher pose, hands free. Skip long help lines (too small in print).
 
 ## Series
 Future titles stay under **Learn with Kaan** (e.g. prompting book). Cartoon episodes map 1:1 to “Try this” spreads.

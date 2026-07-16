@@ -27,7 +27,7 @@
 | Audience | Middle school → seniors; hesitant / careful beginners |
 | Pedagogy | Permission → tiny try → check your judgment → repeat |
 | Cover series line | A Learn with Kaan book |
-| Cover explorations | `assets/covers/` (A citron book · B kitchen table · C type hero) |
+| Cover explorations | `assets/covers/` — leading **A3** (Soft Citron “AI” + teacher chat dialogue) |
 
 **Book 2 (later):** prompting craft under the same series.  
 **Media (later):** *Learn with Kaan* cartoon episodes adapted from book spreads.
