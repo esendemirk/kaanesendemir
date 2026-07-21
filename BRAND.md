@@ -1,11 +1,12 @@
 # Brand — Kaan Esendemir
 
 ## Positioning
-- **Site primary (v1):** Serious personal brand for notability / PR / SEO — **no mascot, no book on site**
-- **Site title line:** Application Architect · Adjunct Professor (AI called out in copy, not jammed into the job title)
+- **Site (v1.1):** Single LinkedIn-funnel landing — headshot + name + role + CTA
+- **SEO:** title/meta/JSON-LD carry Application Architect, Adjunct Professor, AI adoption, enterprise systems
 - **Nav mark:** **KE** monogram
 - **CTA:** LinkedIn only — https://www.linkedin.com/in/kaanesendemir/
 - **Site palette:** cool light `#F6F7F9` · ink `#0F1419` · navy accent `#0B3A5C` (book Soft Citron stays separate)
+- Projects / About depth: later
 - Book 1: ***Careful with AI*** — *What I've Learned Driving Adoption*
 - Book angle: personal AI adoption + driving it for others + tips/tricks (not Learn with Kaan teaching jacket)
 - Slogan: **You can be careful and still begin.**
