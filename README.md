@@ -1,7 +1,7 @@
 # kaanesendemir.com
 
-Static personal brand site — **AI for everybody**.  
-HTML / CSS / vanilla JS for **Cloudflare Pages** (free).
+Static personal brand site for **Kaan Esendemir** — Application Architect & educator.  
+HTML / CSS / vanilla JS for **Cloudflare Pages** (free). CTA → LinkedIn.
 
 ## Local preview
 
@@ -29,7 +29,7 @@ Primary CTA is **LinkedIn** only — no email or phone on the site (anti-scrape)
 
 ## Design tokens
 
-Soft Citron accent `#D4E157` on near-black `#0A0B0D`. See `BRAND.md`.
+Site: navy accent `#0B3A5C` on light `#F6F7F9`. See `BRAND.md`.
 
 ## SEO
 

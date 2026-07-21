@@ -1,7 +1,11 @@
 # Brand — Kaan Esendemir
 
 ## Positioning
-- **Site primary:** AI Application Architect + educator who **drives AI adoption** (LinkedIn CTA; no book on site for now)
+- **Site primary (v1):** Serious personal brand for notability / PR / SEO — **no mascot, no book on site**
+- **Site title line:** Application Architect · Adjunct Professor (AI called out in copy, not jammed into the job title)
+- **Nav mark:** **KE** monogram
+- **CTA:** LinkedIn only — https://www.linkedin.com/in/kaanesendemir/
+- **Site palette:** cool light `#F6F7F9` · ink `#0F1419` · navy accent `#0B3A5C` (book Soft Citron stays separate)
 - Book 1: ***Careful with AI*** — *What I've Learned Driving Adoption*
 - Book angle: personal AI adoption + driving it for others + tips/tricks (not Learn with Kaan teaching jacket)
 - Slogan: **You can be careful and still begin.**
@@ -32,19 +36,21 @@
 
 Retired: picture-book / Learn with Kaan jacket; *Learn AI Without the Pressure* as subtitle; *It's Okay to Be Careful*; *AI for All* as book name.
 
-## Forever color & type
+## Site color & type (personal brand)
 
-Full tokens, CSS, and type rules: [`brand-system/COLORS-AND-TYPE.md`](brand-system/COLORS-AND-TYPE.md)
+Font stays **Inter**. Site is light/editorial for executive credibility.
 
 | Token | Hex | Role |
 |-------|-----|------|
-| Accent (Soft Citron) | `#D4E157` | CTAs, focus, signature |
-| Accent text | `#0A0B0D` | Text on accent |
-| Background | `#0A0B0D` | Canvas |
-| Surface | `#12141A` | Inputs / stage |
-| Text | `#F2F4F8` | Primary |
-| Muted | `#8B93A7` | Secondary |
-| Line | `#1E2330` | Hairlines |
+| Accent (navy) | `#0B3A5C` | CTAs, mark, emphasis |
+| Accent text | `#FFFFFF` | Text on accent |
+| Background | `#F6F7F9` | Canvas |
+| Surface | `#FFFFFF` | Cards / surfaces |
+| Text | `#0F1419` | Primary |
+| Muted | `#5A6572` | Secondary |
+| Line | `#E2E6EB` | Hairlines |
+
+Book Soft Citron system remains in [`brand-system/COLORS-AND-TYPE.md`](brand-system/COLORS-AND-TYPE.md) for *Careful with AI* assets — not the public site.
 
 ## Mascot (canonical)
 - **Style:** soft 3D chibi (#3) — master for book, site, future *Learn with Kaan* cartoon

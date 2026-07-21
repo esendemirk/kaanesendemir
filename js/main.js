@@ -2,19 +2,24 @@
  * Kaan Esendemir — site config + panel router
  * Keep SITE_VERSION in sync with /VERSION (semver).
  */
-const SITE_VERSION = "0.6.1";
+const SITE_VERSION = "1.0.0";
 
 const CONFIG = {
   linkedIn: "https://www.linkedin.com/in/kaanesendemir/",
 };
 
-const PANELS = ["home", "approach", "about"];
+const PANELS = ["home", "about"];
 
 function panelFromHash() {
   const raw = (location.hash || "#home").replace(/^#/, "").toLowerCase();
-  // Legacy hashes
-  if (raw === "workshops" || raw === "join" || raw === "learn" || raw === "book") {
-    return "approach";
+  if (
+    raw === "workshops" ||
+    raw === "join" ||
+    raw === "learn" ||
+    raw === "book" ||
+    raw === "approach"
+  ) {
+    return "home";
   }
   return PANELS.includes(raw) ? raw : "home";
 }
@@ -25,11 +30,8 @@ function setPanel(id, { pushHash = true } = {}) {
   document.querySelectorAll("[data-panel]").forEach((el) => {
     const active = el.getAttribute("data-panel") === id;
     el.classList.toggle("is-active", active);
-    if (active) {
-      el.removeAttribute("hidden");
-    } else {
-      el.setAttribute("hidden", "");
-    }
+    if (active) el.removeAttribute("hidden");
+    else el.setAttribute("hidden", "");
   });
 
   document.querySelectorAll("[data-nav]").forEach((el) => {
@@ -46,9 +48,7 @@ function setPanel(id, { pushHash = true } = {}) {
 
   if (pushHash) {
     const next = `#${id}`;
-    if (location.hash !== next) {
-      history.replaceState(null, "", next);
-    }
+    if (location.hash !== next) history.replaceState(null, "", next);
   }
 }
 
