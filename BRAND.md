@@ -7,12 +7,11 @@
 - **CTA:** LinkedIn (primary) + See projects
 - **No top-right header chrome:** CTAs live in the page body
 - **Footer:** © name + `vX.Y.Z`
-- **Home:** Hero + CTAs only (centered); no newsletter form
+- **Home:** Hero + CTAs only (centered); sticky footer; no newsletter
 - **Layout:** Centered nav and page content
-- **Credentials / press:** Own pages at `/credentials/` and `/press/`
-- **Vision:** `/vision/` meeting-calendar principles only; `noindex`
+- **Vision:** `/vision/` future-company rules (meetings + vacation); `noindex`
 - **Tools:** `/tools/` category capsules + search; public for now, `noindex`; gate later
-- **No blog** on the site
+- **No Experience / blog / press pages** on the site
 - **No public email/phone** on the site
 
 ## Title line
@@ -38,11 +37,9 @@ Font: **Inter**
 | Route | Notes |
 |-------|--------|
 | `/` | Hero + LinkedIn / projects CTAs only |
-| `/credentials/` | Degrees, certs, teaching |
-| `/press/` | Selected press and mentions |
 | `/projects/` | All projects |
 | `/projects/[slug]/` | Share target: OG + LinkedIn share + copy link |
-| `/vision/` | Meeting-calendar principles only; noindex |
+| `/vision/` | Future-company setup (meetings + vacation); noindex |
 | `/tools/` | Personal prompts with category capsules + search; noindex |
 
 ## Writing new pages
