@@ -969,11 +969,6 @@ img {
   border-top: none;
 }
 
-.hero-only + .site-footer,
-main:has(.hero-only) + .site-footer {
-  margin-top: 0;
-}
-
 .tool pre {
   margin: 0;
   white-space: pre-wrap;
