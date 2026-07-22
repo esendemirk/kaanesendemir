@@ -24,4 +24,17 @@ const vision = defineCollection({
   }),
 });
 
-export const collections = { projects, vision };
+/** Public blog — Markdown posts, indexed, LinkedIn-shareable */
+const blog = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog" }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    cover: z.string().optional(),
+    date: z.coerce.date(),
+    draft: z.boolean().default(false),
+    tags: z.array(z.string()).default([]),
+  }),
+});
+
+export const collections = { projects, vision, blog };

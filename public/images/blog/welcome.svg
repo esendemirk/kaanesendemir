@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Welcome">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F6F7F9"/>
+      <stop offset="55%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F0F2F5"/>
+    </linearGradient>
+    <radialGradient id="ray" cx="0" cy="0" r="1">
+      <stop offset="0%" stop-color="#ED1E45" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#ED1E45" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <ellipse cx="0" cy="0" rx="520" ry="380" fill="url(#ray)"/>
+  <ellipse cx="1200" cy="80" rx="420" ry="300" fill="#5A6572" fill-opacity="0.06"/>
+  <text x="96" y="220" fill="#ED1E45" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="4">KAAN ESENDEMIR</text>
+  <text x="96" y="320" fill="#0F1419" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="72" font-weight="700" letter-spacing="-2">Welcome</text>
+  <text x="96" y="400" fill="#5A6572" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="32" font-weight="500">First note on the site</text>
+  <rect x="96" y="460" width="72" height="6" rx="3" fill="#ED1E45"/>
+</svg>

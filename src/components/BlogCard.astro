@@ -1,0 +1,100 @@
+---
+interface Props {
+  title: string;
+  summary: string;
+  href: string;
+  cover?: string;
+  date: Date;
+  tags?: string[];
+}
+
+const { title, summary, href, cover, date, tags = [] } = Astro.props;
+const dateLabel = date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
+---
+
+<a class="card" href={href}>
+  {
+    cover && (
+      <img class="card-cover" src={cover} alt="" width="600" height="315" loading="lazy" />
+    )
+  }
+  <div class="card-body">
+    <time class="card-date" datetime={date.toISOString()}>{dateLabel}</time>
+    <h3>{title}</h3>
+    <p class="card-summary">{summary}</p>
+    {
+      tags.length > 0 && (
+        <ul class="card-tags">
+          {tags.map((t) => (
+            <li>{t}</li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</a>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 160ms var(--ease), transform 160ms var(--ease);
+  }
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .card-cover {
+    width: 100%;
+    aspect-ratio: 1200 / 630;
+    object-fit: cover;
+    background: var(--bg);
+  }
+  .card-body {
+    display: grid;
+    gap: 0.4rem;
+    padding: 1.1rem 1.15rem 1.25rem;
+  }
+  .card-date {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .card h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .card-summary {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  .card-tags {
+    list-style: none;
+    margin: 0.35rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .card-tags li {
+    font-size: 0.72rem;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.15rem 0.55rem;
+  }
+</style>
