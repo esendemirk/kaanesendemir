@@ -23,7 +23,7 @@
 
 | Token | Hex |
 |-------|-----|
-| Accent | `#ED1E45` |
+| Accent | `#0F256E` |
 | Accent text | `#FFFFFF` |
 | Background | `#F6F7F9` (+ soft rays) |
 | Text | `#0F1419` |

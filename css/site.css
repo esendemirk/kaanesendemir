@@ -4,9 +4,9 @@
   --text: #0f1419;
   --muted: #5a6572;
   --line: #e2e6eb;
-  --accent: #ed1e45;
+  --accent: #0f256e;
   --accent-text: #ffffff;
-  --focus: #ed1e45;
+  --focus: #0f256e;
   --font: Inter, "Open Sans", "Segoe UI", system-ui, sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --max: 1120px;
@@ -70,9 +70,9 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(ellipse 70% 45% at 0% 0%, rgba(237, 30, 69, 0.07), transparent 55%),
+    radial-gradient(ellipse 70% 45% at 0% 0%, rgba(15, 37, 110, 0.08), transparent 55%),
     radial-gradient(ellipse 55% 40% at 100% 0%, rgba(90, 101, 114, 0.06), transparent 50%),
-    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(237, 30, 69, 0.04), transparent 55%);
+    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(15, 37, 110, 0.05), transparent 55%);
 }
 
 a {
@@ -826,7 +826,7 @@ input.tools-search::placeholder {
 
 input.tools-search:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(237, 30, 69, 0.12);
+  box-shadow: 0 0 0 3px rgba(15, 37, 110, 0.14);
 }
 
 input.tools-search::-webkit-search-decoration,
@@ -877,7 +877,7 @@ button.capsule:hover {
 
 button.capsule.is-active {
   border-color: var(--accent);
-  background: rgba(237, 30, 69, 0.1);
+  background: rgba(15, 37, 110, 0.1);
   color: var(--accent);
 }
 
