@@ -330,6 +330,21 @@ a.btn,
   width: 100%;
 }
 
+.cta-row .btn-linkedin {
+  width: auto;
+}
+
+.btn-linkedin {
+  min-width: 52px;
+  padding-inline: 1.1rem;
+}
+
+.btn-linkedin svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
 .cta-newsletter {
   padding-top: 1rem;
   border-top: 1px solid var(--line);
@@ -424,8 +439,8 @@ a.btn,
 
 .card-body {
   display: grid;
-  gap: 0.4rem;
-  padding: 1.1rem 1.15rem 1.25rem;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem 1.05rem;
 }
 
 .card-status,
@@ -440,7 +455,7 @@ a.btn,
 
 .card h3 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
@@ -764,23 +779,60 @@ a.btn,
 
 .tool-head {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
+  text-align: left;
 }
 
 .tool-title-row {
-  display: grid;
-  gap: 0.45rem;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.65rem;
   min-width: 0;
+  flex: 1 1 auto;
+  justify-content: flex-start;
 }
 
 .tool-head h2 {
   margin: 0;
   font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+button.tool-copy {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--muted);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  line-height: 0;
+  transition: color 160ms var(--ease), border-color 160ms var(--ease);
+}
+
+button.tool-copy svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+button.tool-copy:hover {
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .tools-filters {
@@ -891,10 +943,6 @@ span.capsule-static {
   font-size: 0.72rem;
 }
 
-button.tool-copy {
-  appearance: none;
-  -webkit-appearance: none;
-}
 
 .tools-empty {
   margin: 0 0 1rem;
@@ -1123,8 +1171,12 @@ a.jump-pill:hover {
   }
 
   .card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-inline: auto;
+  }
+
+  .card-grid .card {
+    min-width: 0;
   }
 
   .cred-grid {
