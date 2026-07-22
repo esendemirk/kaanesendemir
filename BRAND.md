@@ -7,11 +7,12 @@
 - **CTA:** LinkedIn + Buttondown newsletter (stub until username set)
 - **No top-right header chrome:** CTAs live in the page body
 - **Footer:** c name + `vX.Y.Z`
-- **Home:** Hero, primary CTAs, and newsletter only (no credentials/press/projects blocks)
+- **Home:** Hero, primary CTAs, and newsletter only (centered)
+- **Layout:** Centered nav and page content
 - **Credentials / press:** Own pages at `/credentials/` and `/press/`
-- **Blog:** `/blog/` public HTML posts; SEO + breadcrumbs + LinkedIn share
 - **Vision:** `/vision/` meeting-calendar principles only; `noindex`
 - **Tools:** `/tools/` category capsules + search; public for now, `noindex`; gate later
+- **No blog** on the site
 - **No public email/phone** on the site
 
 ## Title line
@@ -41,14 +42,12 @@ Font: **Inter**
 | `/press/` | Selected press and mentions |
 | `/projects/` | All projects |
 | `/projects/[slug]/` | Share target: OG + LinkedIn share + copy link |
-| `/blog/` | Public posts: SEO, breadcrumbs, LinkedIn share |
-| `/blog/[slug]/` | Post page: OG thumbnail + title, ShareBar |
 | `/vision/` | Meeting-calendar principles only; noindex |
 | `/tools/` | Personal prompts with category capsules + search; noindex |
 
 ## Writing new pages
 
-Add a folder with `index.html` (e.g. `blog/my-post/index.html`), link it from the index, update `sitemap.xml` for public pages, bump `VERSION` + footers, commit, push.
+Add a folder with `index.html`, link it from nav/indexes as needed, update `sitemap.xml` for public pages, bump `VERSION` + footers, commit, push.
 
 ## Cloudflare Pages
 
