@@ -1,5 +1,5 @@
 /** Site config — keep SITE_VERSION in sync with /VERSION */
-export const SITE_VERSION = "2.0.0";
+export const SITE_VERSION = "2.0.1";
 export const SITE_URL = "https://kaanesendemir.com";
 export const LINKEDIN = "https://www.linkedin.com/in/kaanesendemir/";
 

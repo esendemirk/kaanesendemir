@@ -208,22 +208,23 @@ const personSchema = {
 
 <style>
   .hero {
-    padding-top: 1.5rem;
+    padding-top: 0.75rem;
   }
   .hero-grid {
     display: grid;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
+    justify-items: center;
+    text-align: center;
   }
   .hero-photo {
-    width: min(56vw, 260px);
+    width: min(42vw, 200px);
     aspect-ratio: 1;
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid var(--line);
     background: var(--surface);
-    box-shadow: 0 20px 48px rgba(15, 20, 25, 0.1);
-    justify-self: center;
+    box-shadow: 0 16px 36px rgba(15, 20, 25, 0.1);
   }
   .hero-photo img {
     width: 100%;
@@ -231,29 +232,37 @@ const personSchema = {
     object-fit: cover;
     object-position: center 18%;
   }
+  .hero-copy {
+    width: 100%;
+    max-width: 36rem;
+  }
   .hero-copy h1 {
-    margin: 0 0 0.75rem;
-    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    margin: 0 0 0.65rem;
+    font-size: clamp(2rem, 8vw, 3.6rem);
     font-weight: 600;
     letter-spacing: -0.035em;
     line-height: 1.05;
   }
   .lede {
-    margin: 0 0 1.25rem;
-    max-width: 40ch;
-    font-size: 1.1rem;
+    margin: 0 auto 1.25rem;
+    max-width: 36ch;
+    font-size: 1.02rem;
     color: var(--muted);
     line-height: 1.55;
   }
   .cta-row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+  }
+  .cta-row .btn {
+    width: 100%;
   }
   .cta-newsletter {
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     border-top: 1px solid var(--line);
+    text-align: left;
   }
   .intro {
     margin: -0.25rem 0 1.5rem;
@@ -275,7 +284,7 @@ const personSchema = {
   }
   .cred-grid {
     display: grid;
-    gap: 1.75rem;
+    gap: 1.5rem;
   }
   .cred-grid h3 {
     margin: 0 0 0.6rem;
@@ -293,7 +302,7 @@ const personSchema = {
     gap: 0.55rem;
   }
   .cred-grid li {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
   }
   .press-list {
     list-style: none;
@@ -309,19 +318,36 @@ const personSchema = {
     color: var(--accent);
   }
   @media (min-width: 800px) {
+    .hero {
+      padding-top: 1.5rem;
+    }
     .hero-grid {
       grid-template-columns: auto 1fr;
       gap: 3rem;
+      justify-items: start;
+      text-align: left;
     }
     .hero-photo {
       width: min(30vw, 300px);
-      justify-self: start;
+    }
+    .lede {
+      margin: 0 0 1.25rem;
+      max-width: 40ch;
+      font-size: 1.1rem;
+    }
+    .cta-row {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .cta-row .btn {
+      width: auto;
     }
     .card-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .cred-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.75rem;
     }
   }
 </style>

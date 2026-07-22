@@ -34,6 +34,7 @@ const action = `https://buttondown.com/api/emails/embed-subscribe/${BUTTONDOWN_U
   .newsletter {
     display: grid;
     gap: 0.5rem;
+    width: 100%;
     max-width: 28rem;
   }
   .newsletter label {
@@ -41,12 +42,12 @@ const action = `https://buttondown.com/api/emails/embed-subscribe/${BUTTONDOWN_U
     color: var(--muted);
   }
   .newsletter-row {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 0.5rem;
   }
   .newsletter input[type="email"] {
-    flex: 1 1 180px;
+    width: 100%;
     min-height: 44px;
     padding: 0.65rem 1rem;
     border-radius: 6px;
@@ -54,6 +55,9 @@ const action = `https://buttondown.com/api/emails/embed-subscribe/${BUTTONDOWN_U
     background: var(--surface);
     color: var(--text);
     font: inherit;
+  }
+  .newsletter button {
+    width: 100%;
   }
   .newsletter-note {
     margin: 0;
@@ -63,5 +67,13 @@ const action = `https://buttondown.com/api/emails/embed-subscribe/${BUTTONDOWN_U
   .newsletter button:disabled {
     opacity: 0.55;
     cursor: not-allowed;
+  }
+  @media (min-width: 560px) {
+    .newsletter-row {
+      grid-template-columns: 1fr auto;
+    }
+    .newsletter button {
+      width: auto;
+    }
   }
 </style>
