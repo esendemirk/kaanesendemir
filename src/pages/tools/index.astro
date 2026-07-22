@@ -1,0 +1,114 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import tools from "../../data/tools.json";
+
+/** Phase 2: password / auth gate. Public + noindex for now. */
+---
+
+<BaseLayout
+  title="Tools — Kaan Esendemir"
+  description="Personal prompt library for Kaan Esendemir."
+  noindex={true}
+>
+  <main id="main" class="section">
+    <div class="wrap tools">
+      <p class="eyebrow"><a class="back" href="/">← Home</a></p>
+      <h1>Tools</h1>
+      <p class="muted intro">
+        Personal prompts for architecture, adoption, and teaching. Copy what you need. Gating
+        comes later — do not store secrets here.
+      </p>
+      <ul class="tool-list">
+        {
+          tools.map((tool) => (
+            <li class="tool">
+              <div class="tool-head">
+                <h2>{tool.title}</h2>
+                <button
+                  class="btn btn-ghost"
+                  type="button"
+                  data-copy-prompt
+                  data-prompt={tool.body}
+                >
+                  Copy
+                </button>
+              </div>
+              <pre>{tool.body}</pre>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="status" data-copy-status aria-live="polite"></p>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .tools {
+    max-width: 720px;
+  }
+  h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    letter-spacing: -0.03em;
+  }
+  .intro {
+    margin: 0 0 1.75rem;
+  }
+  .back {
+    color: var(--muted);
+  }
+  .tool-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+  .tool {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    padding: 1rem 1.1rem;
+  }
+  .tool-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .tool h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .tool pre {
+    margin: 0;
+    white-space: pre-wrap;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .status {
+    margin: 1rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+</style>
+
+<script>
+  const status = document.querySelector("[data-copy-status]");
+  document.querySelectorAll("[data-copy-prompt]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const text = btn.getAttribute("data-prompt") || "";
+      try {
+        await navigator.clipboard.writeText(text);
+        if (status) status.textContent = "Copied.";
+      } catch {
+        if (status) status.textContent = "Couldn’t copy.";
+      }
+    });
+  });
+</script>

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "careful-adopt",
+    "title": "Careful AI adoption brief",
+    "body": "You are helping a careful enterprise team adopt AI. Goal: one practical first win this week.\n\nConstraints:\n- No hype\n- Assume hesitation is rational\n- Keep humans in charge of judgment\n\nAsk: who is the user, what workflow hurts most, what must never be automated, and what success looks like in 7 days. Then propose one small start."
+  },
+  {
+    "id": "arch-review",
+    "title": "Architecture review (plain English)",
+    "body": "Review this architecture for reliability, operability, and AI integration risks. Respond in plain English with:\n1) What works\n2) What will break under load\n3) Top 3 risks\n4) One next step\n\nArchitecture:\n[paste]"
+  },
+  {
+    "id": "teach-explain",
+    "title": "Teach it like a professor",
+    "body": "Explain this concept for mixed-experience students (some brand new, some working engineers). Use:\n- One plain definition\n- One analogy\n- One real-world example\n- One common mistake\n- One practice question\n\nTopic:\n[paste]"
+  }
+]

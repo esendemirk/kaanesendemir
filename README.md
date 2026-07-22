@@ -1,39 +1,46 @@
 # kaanesendemir.com
 
-Static personal brand site for **Kaan Esendemir** — Application Architect & educator.  
-HTML / CSS / vanilla JS for **Cloudflare Pages** (free). CTA → LinkedIn.
+Personal brand site for **Kaan Esendemir** — Application Architect & Adjunct Professor.
 
-## Local preview
+Built with **Astro** (static). Hosted on **Cloudflare Pages** (free).
 
-Any static server from the repo root:
+## Develop
 
 ```bash
-npx --yes serve .
+npm install
+npm run dev
 ```
 
-Or open `index.html` directly (hash routing still works).
+## Build
 
-## Deploy (Cloudflare Pages)
+```bash
+npm run build
+```
 
-1. Push this repo to GitHub (or connect locally).
-2. Cloudflare Dashboard → **Workers & Pages** → **Create** → **Pages** → connect repo.
-3. Build settings:
-   - **Framework preset:** None
-   - **Build command:** *(empty)*
-   - **Build output directory:** `/` (repo root)
-4. Attach custom domain **kaanesendemir.com**.
+Output: `dist/`
 
-## Contact
+### Cloudflare Pages
 
-Primary CTA is **LinkedIn** only — no email or phone on the site (anti-scrape).
+- **Build command:** `npm run build`
+- **Build output directory:** `dist`
+- **Node version:** 22+
 
-## Design tokens
+Optional env: `PUBLIC_BUTTONDOWN_USERNAME` for newsletter signup.
 
-Site: navy accent `#0B3A5C` on light `#F6F7F9`. See `BRAND.md`.
+## Content
 
-## SEO
+| Path | Purpose |
+|------|---------|
+| `src/content/projects/*.md` | Shareable project pages |
+| `src/data/press.json` | Press / alumni mentions |
+| `src/data/credentials.json` | Roles, teaching, education |
+| `src/data/tools.json` | Personal prompts (`/tools`, noindex) |
 
-- Canonical, Open Graph, Twitter cards
-- `Person` + `WebSite` JSON-LD
-- `robots.txt` + `sitemap.xml`
-- Content in static HTML (crawlable); panels are in-DOM, not JS-only injected
+## CTAs
+
+- LinkedIn: https://www.linkedin.com/in/kaanesendemir/
+- Newsletter: Buttondown embed (stub until username is set)
+
+## Version
+
+See `VERSION` and footer `vX.Y.Z`. Ship: bump → commit → push.

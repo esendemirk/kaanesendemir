@@ -1,0 +1,67 @@
+---
+import { BUTTONDOWN_USERNAME } from "../config";
+
+const stubbed = BUTTONDOWN_USERNAME === "YOUR_USERNAME";
+const action = `https://buttondown.com/api/emails/embed-subscribe/${BUTTONDOWN_USERNAME}`;
+---
+
+<form class="newsletter" action={action} method="post" aria-label="Newsletter signup">
+  <label for="email">Get notes on AI adoption and experiments</label>
+  <div class="newsletter-row">
+    <input
+      id="email"
+      name="email"
+      type="email"
+      autocomplete="email"
+      placeholder="you@email.com"
+      required
+    />
+    <input type="hidden" name="embed" value="1" />
+    <button class="btn btn-primary" type="submit" disabled={stubbed}>
+      Subscribe
+    </button>
+  </div>
+  {
+    stubbed ? (
+      <p class="newsletter-note">Newsletter wiring pending — LinkedIn is live now.</p>
+    ) : (
+      <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+    )
+  }
+</form>
+
+<style>
+  .newsletter {
+    display: grid;
+    gap: 0.5rem;
+    max-width: 28rem;
+  }
+  .newsletter label {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .newsletter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .newsletter input[type="email"] {
+    flex: 1 1 180px;
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+  }
+  .newsletter-note {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .newsletter button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+</style>

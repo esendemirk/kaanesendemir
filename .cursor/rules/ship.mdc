@@ -10,10 +10,13 @@ After meaningful changes to this project (site, brand, book assets, content):
 1. **Bump `VERSION`** (semver, single line, no `v` prefix):
    - **major** — breaking brand/positioning or incompatible site rewrite
    - **minor** — new feature, locked title/identity, new page/section, cover/asset system
-   - **patch** — copy, styling, bugfix, small asset tweak
-2. Keep `js/main.js` `SITE_VERSION` in sync with `VERSION`.
+   - **patch** — copy, styling, bug fix, small asset tweak
+2. Keep `SITE_VERSION` in `src/config.ts` in sync with `VERSION`.
 3. Footer must show the version (`vX.Y.Z`).
-4. **Commit** with a clear message (why, not only what).
-5. **Push** to `origin` (usually `main`) so Cloudflare Pages can deploy.
+4. Confirm `npm run build` succeeds when structure changes.
+5. **Commit** with a clear message (why, not only what).
+6. **Push** to `origin` (usually `main`) so Cloudflare Pages can deploy.
+
+Cloudflare Pages: build `npm run build`, output `dist`.
 
 Do not ask whether to commit/push — ship by default unless the user says otherwise.

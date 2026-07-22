@@ -1,0 +1,327 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NewsletterForm from "../components/NewsletterForm.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { LINKEDIN, SITE_URL } from "../config";
+import { getCollection } from "astro:content";
+import credentials from "../data/credentials.json";
+import pressItems from "../data/press.json";
+
+const projects = (await getCollection("projects"))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 6);
+
+const press = [...pressItems].sort(
+  (a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf()
+);
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Kaan Esendemir",
+  url: SITE_URL,
+  image: `${SITE_URL}/images/headshot.png`,
+  jobTitle: ["Application Architect", "Adjunct Professor"],
+  description:
+    "Application Architect and Adjunct Professor focused on enterprise systems, AI adoption, and computer science education.",
+  knowsAbout: [
+    "Application architecture",
+    "Enterprise AI adoption",
+    "Cloud-native platforms",
+    "Distributed systems",
+    "Computer science education",
+  ],
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", "name": "Kennesaw State University" },
+    { "@type": "CollegeOrUniversity", "name": "Montclair State University" },
+  ],
+  sameAs: [LINKEDIN],
+};
+---
+
+<BaseLayout
+  title="Kaan Esendemir — Application Architect & Adjunct Professor"
+  description="Kaan Esendemir is an Application Architect and Adjunct Professor focused on enterprise systems, AI adoption, and education."
+  image={`${SITE_URL}/images/headshot.png`}
+  type="profile"
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
+  <main id="main">
+    <div class="wrap">
+      <nav class="anchor-nav" aria-label="On this page">
+        <a href="#top">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#press">Press</a>
+        <a href="/tools">Tools</a>
+      </nav>
+    </div>
+
+    <section class="hero section" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-photo">
+          <img
+            src="/images/headshot.png"
+            alt="Kaan Esendemir, Application Architect and Adjunct Professor"
+            width="800"
+            height="800"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Application Architect · Adjunct Professor</p>
+          <h1>Kaan Esendemir</h1>
+          <p class="lede">
+            Enterprise systems. AI adoption. Education. I build platforms that hold up in
+            production — and teach the judgment that keeps AI useful.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href={LINKEDIN} target="_blank" rel="noopener noreferrer">
+              Connect on LinkedIn
+            </a>
+            <a class="btn btn-ghost" href="#projects">See projects</a>
+          </div>
+          <div class="cta-newsletter">
+            <NewsletterForm />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap">
+        <p class="eyebrow">Projects</p>
+        <h2>Experiments, teaching builds, and long-form work.</h2>
+        <p class="muted intro">
+          Shareable pages for LinkedIn — hardware, AI demos, and the book in progress.
+        </p>
+        <div class="card-grid">
+          {
+            projects.map((p) => (
+              <ProjectCard
+                title={p.data.title}
+                summary={p.data.summary}
+                href={`/projects/${p.id}/`}
+                cover={p.data.cover}
+                status={p.data.status}
+                tags={p.data.tags}
+              />
+            ))
+          }
+        </div>
+        <p class="more">
+          <a href="/projects/">All projects →</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="credentials">
+      <div class="wrap">
+        <p class="eyebrow">Credentials</p>
+        <h2>Architect. Educator.</h2>
+        <div class="cred-grid">
+          <div>
+            <h3>Industry</h3>
+            <ul>
+              {
+                credentials.roles.map((r) => (
+                  <li>
+                    <strong>{r.title}</strong> — {r.org}
+                    <span class="muted"> {r.detail}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div>
+            <h3>Teaching</h3>
+            <ul>
+              {
+                credentials.teaching.map((t) => (
+                  <li>
+                    <strong>{t.title}</strong> — {t.org}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div>
+            <h3>Education</h3>
+            <ul>
+              {
+                credentials.education.map((e) => (
+                  <li>
+                    <strong>{e.title}</strong> — {e.org}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="press">
+      <div class="wrap">
+        <p class="eyebrow">Press</p>
+        <h2>Selected coverage</h2>
+        {
+          press.length === 0 ? (
+            <p class="muted intro">
+              Alumni spotlights, interviews, and mentions will land here. Have something to add?
+              Message me on{" "}
+              <a class="inline-link" href={LINKEDIN} target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+              .
+            </p>
+          ) : (
+            <ul class="press-list">
+              {press.map((item) => (
+                <li>
+                  <p class="press-meta">
+                    {item.outlet}
+                    {" · "}
+                    {new Date(item.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "short",
+                    })}
+                  </p>
+                  {item.url ? (
+                    <a href={item.url} target="_blank" rel="noopener noreferrer">
+                      {item.title}
+                    </a>
+                  ) : (
+                    <span>{item.title}</span>
+                  )}
+                  {item.quote && <p class="muted">{item.quote}</p>}
+                </li>
+              ))}
+            </ul>
+          )
+        }
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-top: 1.5rem;
+  }
+  .hero-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+  .hero-photo {
+    width: min(56vw, 260px);
+    aspect-ratio: 1;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    box-shadow: 0 20px 48px rgba(15, 20, 25, 0.1);
+    justify-self: center;
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 18%;
+  }
+  .hero-copy h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+  }
+  .lede {
+    margin: 0 0 1.25rem;
+    max-width: 40ch;
+    font-size: 1.1rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .cta-newsletter {
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--line);
+  }
+  .intro {
+    margin: -0.25rem 0 1.5rem;
+    max-width: 48ch;
+  }
+  .card-grid {
+    display: grid;
+    gap: 1rem;
+  }
+  .more {
+    margin: 1.5rem 0 0;
+  }
+  .more a,
+  .inline-link {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .cred-grid {
+    display: grid;
+    gap: 1.75rem;
+  }
+  .cred-grid h3 {
+    margin: 0 0 0.6rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .cred-grid ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .cred-grid li {
+    font-size: 0.95rem;
+  }
+  .press-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+  .press-meta {
+    margin: 0 0 0.2rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  @media (min-width: 800px) {
+    .hero-grid {
+      grid-template-columns: auto 1fr;
+      gap: 3rem;
+    }
+    .hero-photo {
+      width: min(30vw, 300px);
+      justify-self: start;
+    }
+    .card-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .cred-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>

@@ -1,0 +1,48 @@
+---
+interface Props {
+  url: string;
+  title: string;
+}
+
+const { url, title } = Astro.props;
+const linkedInShare = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+---
+
+<div class="share-bar">
+  <a class="btn btn-primary" href={linkedInShare} target="_blank" rel="noopener noreferrer">
+    Share on LinkedIn
+  </a>
+  <button class="btn btn-ghost" type="button" data-copy-link data-url={url} data-title={title}>
+    Copy link
+  </button>
+  <span class="share-status" data-copy-status aria-live="polite"></span>
+</div>
+
+<style>
+  .share-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .share-status {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+</style>
+
+<script>
+  document.querySelectorAll("[data-copy-link]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const url = btn.getAttribute("data-url") || location.href;
+      const status = btn.parentElement?.querySelector("[data-copy-status]");
+      try {
+        await navigator.clipboard.writeText(url);
+        if (status) status.textContent = "Link copied.";
+      } catch {
+        if (status) status.textContent = "Couldn’t copy — select the URL bar.";
+      }
+    });
+  });
+</script>
