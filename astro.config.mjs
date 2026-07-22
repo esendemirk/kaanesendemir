@@ -4,7 +4,11 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://kaanesendemir.com",
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes("/tools") && !page.includes("/vision"),
+    }),
+  ],
   build: {
     format: "directory",
   },

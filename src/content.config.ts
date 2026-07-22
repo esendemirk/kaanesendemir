@@ -14,4 +14,14 @@ const projects = defineCollection({
   }),
 });
 
-export const collections = { projects };
+/** Leadership / “how I’d run a company” chapters — wiki-style MD, rendered as one running page */
+const vision = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/vision" }),
+  schema: z.object({
+    title: z.string(),
+    order: z.number(),
+    summary: z.string(),
+  }),
+});
+
+export const collections = { projects, vision };

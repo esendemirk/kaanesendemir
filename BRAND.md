@@ -8,6 +8,7 @@
 - **No top-right header chrome** — CTAs live in the page body
 - **Footer:** © name + `vX.Y.Z`
 - **Tools:** `/tools` public for now, `noindex`; gate later
+- **Vision board:** `/vision` — leadership / “how I’d run a company”; Markdown chapters; `noindex`
 - **No public email/phone** on the site
 
 ## Title line
@@ -36,6 +37,8 @@ Font: **Inter**
 | `/projects` | All projects |
 | `/projects/[slug]` | Share target — OG + LinkedIn share + copy link |
 | `/tools` | Personal prompts — noindex |
+| `/vision` | Running leadership vision board — Markdown chapters, noindex |
+| `/vision/[slug]` | Single chapter (wiki-style deep link) — noindex |
 
 ## Versioning
 

@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /tools/
+Disallow: /vision/
 
 Sitemap: https://kaanesendemir.com/sitemap-index.xml
