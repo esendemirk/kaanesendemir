@@ -65,8 +65,4 @@ Then **Purge Everything** if an old deploy was edge-cached.
 
 ## Book (offline from primary site chrome)
 
-| Field | Value |
-|-------|--------|
-| Title | Careful with AI |
-| Subtitle | What I've Learned Driving Adoption |
-| Site role | Project page for LinkedIn sharing |
+Tracked offline for now — not listed in the public projects grid.
