@@ -30,67 +30,83 @@
   });
 
   var toolsRoot = document.querySelector("[data-tool-list]");
-  if (!toolsRoot) return;
+  if (toolsRoot) {
+    var searchInput = document.querySelector("[data-tool-search]");
+    var categoryBtns = Array.prototype.slice.call(
+      document.querySelectorAll("[data-tool-category]")
+    );
+    var tools = Array.prototype.slice.call(document.querySelectorAll("[data-tool]"));
+    var empty = document.querySelector("[data-tools-empty]");
+    var activeCategory = "all";
 
-  var searchInput = document.querySelector("[data-tool-search]");
-  var categoryBtns = Array.prototype.slice.call(document.querySelectorAll("[data-tool-category]"));
-  var tools = Array.prototype.slice.call(document.querySelectorAll("[data-tool]"));
-  var empty = document.querySelector("[data-tools-empty]");
-  var activeCategory = "all";
-
-  function tokens(str) {
-    return String(str || "")
-      .toLowerCase()
-      .split(/[^a-z0-9]+/)
-      .filter(Boolean);
-  }
-
-  function applyFilters() {
-    var qTokens = tokens(searchInput ? searchInput.value : "");
-    var visible = 0;
-
-    tools.forEach(function (tool) {
-      var cat = (tool.getAttribute("data-category") || "").toLowerCase();
-      var titleEl = tool.querySelector("h2");
-      var title = titleEl ? titleEl.textContent : "";
-      var hay = tokens(
-        [title, cat, tool.getAttribute("data-search") || ""].join(" ")
-      ).join(" ");
-
-      var catOk = activeCategory === "all" || cat === activeCategory;
-      var qOk =
-        qTokens.length === 0 ||
-        qTokens.every(function (t) {
-          return hay.indexOf(t) !== -1;
-        });
-
-      var show = catOk && qOk;
-      tool.classList.toggle("is-hidden", !show);
-      if (show) visible += 1;
-    });
-
-    if (empty) {
-      empty.classList.toggle("is-hidden", visible > 0);
-      empty.setAttribute("aria-hidden", visible > 0 ? "true" : "false");
+    function normalize(str) {
+      return String(str || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
     }
-  }
 
-  categoryBtns.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      activeCategory = (btn.getAttribute("data-tool-category") || "all").toLowerCase();
-      categoryBtns.forEach(function (b) {
-        var on = b === btn;
-        b.classList.toggle("is-active", on);
-        b.setAttribute("aria-pressed", on ? "true" : "false");
+    function applyFilters() {
+      var q = normalize(searchInput ? searchInput.value : "");
+      var qParts = q ? q.split(" ") : [];
+      var visible = 0;
+
+      tools.forEach(function (tool) {
+        var cat = normalize(tool.getAttribute("data-category") || "");
+        var titleEl = tool.querySelector("h2");
+        var title = normalize(titleEl ? titleEl.textContent : "");
+        var tags = normalize(tool.getAttribute("data-search") || "");
+        var hay = (title + " " + cat + " " + tags).trim();
+
+        var catOk = activeCategory === "all" || cat === activeCategory;
+        var qOk =
+          qParts.length === 0 ||
+          qParts.every(function (part) {
+            return hay.indexOf(part) !== -1;
+          });
+
+        var show = catOk && qOk;
+        if (show) {
+          tool.classList.remove("is-hidden");
+          tool.removeAttribute("hidden");
+          visible += 1;
+        } else {
+          tool.classList.add("is-hidden");
+          tool.setAttribute("hidden", "");
+        }
       });
-      applyFilters();
+
+      if (empty) {
+        if (visible > 0) {
+          empty.classList.add("is-hidden");
+          empty.setAttribute("aria-hidden", "true");
+        } else {
+          empty.classList.remove("is-hidden");
+          empty.setAttribute("aria-hidden", "false");
+        }
+      }
+    }
+
+    categoryBtns.forEach(function (btn) {
+      btn.addEventListener("click", function (event) {
+        event.preventDefault();
+        activeCategory = normalize(btn.getAttribute("data-tool-category") || "all");
+        categoryBtns.forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle("is-active", on);
+          b.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        applyFilters();
+      });
     });
-  });
 
-  if (searchInput) {
-    searchInput.addEventListener("input", applyFilters);
-    searchInput.addEventListener("search", applyFilters);
+    if (searchInput) {
+      searchInput.addEventListener("input", applyFilters);
+      searchInput.addEventListener("keyup", applyFilters);
+      searchInput.addEventListener("search", applyFilters);
+    }
+
+    applyFilters();
   }
-
-  applyFilters();
 })();

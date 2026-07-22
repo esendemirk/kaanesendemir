@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/site.css" />
+  <link rel="stylesheet" href="/css/site.css?v=3.4.2" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -39,104 +39,68 @@
       </p>
 
       <nav class="playbook-jump" aria-label="Sections">
-        <a href="#calendar-meetings">Calendar &amp; meetings</a>
-        <a href="#vacation">Vacation</a>
-        <a href="#remote-first">Remote-first</a>
-        <a href="#see-the-company">See the company</a>
+        <a class="jump-pill" href="#calendar-meetings">Calendar &amp; meetings</a>
+        <a class="jump-pill" href="#vacation">Vacation</a>
+        <a class="jump-pill" href="#remote-first">Remote-first</a>
+        <a class="jump-pill" href="#see-the-company">See the company</a>
       </nav>
 
-      <div class="playbook-sections">
-        <details class="playbook-panel" id="calendar-meetings">
-          <summary>Calendar &amp; meetings</summary>
-          <div class="body">
-            <p><strong>No lunch meetings.</strong> Eat. Reset. Do not turn the break into another call.</p>
+      <section class="playbook-block" id="calendar-meetings">
+        <h2>Calendar &amp; meetings</h2>
+        <div class="body">
+          <p><strong>No lunch meetings.</strong> Eat. Reset. Do not turn the break into another call.</p>
+          <p><strong>No meetings after 4:00.</strong> Not much gets done late. People need time to wind down the day.</p>
+          <p><strong>No first-thing-in-the-morning meetings.</strong> An 8:00 kickoff is not how we start. Give people time to get oriented before the calendar owns them.</p>
+          <p><strong>Default to 15 minutes.</strong> Get away from the 30-minute habit. Aim for 15. Cap normal meetings at 30 minutes.</p>
+          <p><strong>Two-hour meetings are not OK for regular work.</strong> Status meetings, syncs, standups, demos-as-status: none of that should run two hours. No exceptions for the usual meeting types.</p>
+          <p><strong>IM before a meeting.</strong> If a quick message can handle it, use IM. A lot of calendar clutter is BS that should have been a short chat.</p>
+          <p><strong>Email before you book time.</strong> Prefer email (or a written thread) before a meeting is set. Meetings are for what writing cannot settle cleanly, not the default first move.</p>
+        </div>
+      </section>
 
-            <p><strong>No meetings after 4:00.</strong> Not much gets done late. People need time to wind down the day.</p>
+      <section class="playbook-block" id="vacation">
+        <h2>Vacation</h2>
+        <div class="body">
+          <p><strong>No tiered vacation cliffs.</strong> The usual model (two weeks until year five, then a third week at year ten) is out. Tenure should open time steadily, not in rare jumps.</p>
+          <p><strong>Start with two weeks (10 days).</strong> Then every completed year of work earns you one extra vacation day for the years ahead. Think of it like restricted stock units, but for time off: each year of tenure unlocks another day into your annual bank.</p>
+          <p>Examples:</p>
+          <ul>
+            <li>Year 0 (start): 10 days</li>
+            <li>After 1 year: 11 days</li>
+            <li>After 2 years: 12 days</li>
+            <li>After 19 years: 29 days</li>
+            <li>After 20 years: 30 days</li>
+          </ul>
+          <p>Stay longer, earn more rest. The bump lands each year you complete, not in five-year cliffs.</p>
+        </div>
+      </section>
 
-            <p><strong>No first-thing-in-the-morning meetings.</strong> An 8:00 kickoff is not how we start. Give people time to get oriented before the calendar owns them.</p>
+      <section class="playbook-block" id="remote-first">
+        <h2>Remote-first</h2>
+        <div class="body">
+          <p><strong>Remote-first by default.</strong> The cheapest office is no office. We do not lease a permanent HQ unless we are genuinely huge and can afford one without pretending it is required for culture.</p>
+          <p><strong>No strict hybrid quotas.</strong> If the work can be done remotely, we do not invent fake structure like “two days a week in office” or “three days a week or else.” That is theater.</p>
+          <p><strong>Work from elsewhere is allowed.</strong> Want to work out of the country for a month? Fine, if the role can stay remote and the work still gets done. Trust outcomes, not badges on a door.</p>
+          <p><strong>Shared meetup days, not attendance theater.</strong> People still need to meet people. We plan occasional shared days (monthly, or every couple of weeks) for team building, demos, and face time. Rent a WeWork conference room or similar for those days. Not a daily commute mandate. Strongly encouraged so the team stays human, not a punishment calendar.</p>
+        </div>
+      </section>
 
-            <p><strong>Default to 15 minutes.</strong> Get away from the 30-minute habit. Aim for 15. Cap normal meetings at 30 minutes.</p>
-
-            <p><strong>Two-hour meetings are not OK for regular work.</strong> Status meetings, syncs, standups, demos-as-status: none of that should run two hours. No exceptions for the usual meeting types.</p>
-
-            <p><strong>IM before a meeting.</strong> If a quick message can handle it, use IM. A lot of calendar clutter is BS that should have been a short chat.</p>
-
-            <p><strong>Email before you book time.</strong> Prefer email (or a written thread) before a meeting is set. Meetings are for what writing cannot settle cleanly, not the default first move.</p>
-          </div>
-        </details>
-
-        <details class="playbook-panel" id="vacation">
-          <summary>Vacation</summary>
-          <div class="body">
-            <p><strong>No tiered vacation cliffs.</strong> The usual model (two weeks until year five, then a third week at year ten) is out. Tenure should open time steadily, not in rare jumps.</p>
-
-            <p><strong>Start with two weeks (10 days).</strong> Then every completed year of work earns you one extra vacation day for the years ahead. Think of it like restricted stock units, but for time off: each year of tenure unlocks another day into your annual bank.</p>
-
-            <p>Examples:</p>
-            <ul>
-              <li>Year 0 (start): 10 days</li>
-              <li>After 1 year: 11 days</li>
-              <li>After 2 years: 12 days</li>
-              <li>After 19 years: 29 days</li>
-              <li>After 20 years: 30 days</li>
-            </ul>
-
-            <p>Stay longer, earn more rest. The bump lands each year you complete, not in five-year cliffs.</p>
-          </div>
-        </details>
-
-        <details class="playbook-panel" id="remote-first">
-          <summary>Remote-first</summary>
-          <div class="body">
-            <p><strong>Remote-first by default.</strong> The cheapest office is no office. We do not lease a permanent HQ unless we are genuinely huge and can afford one without pretending it is required for culture.</p>
-
-            <p><strong>No strict hybrid quotas.</strong> If the work can be done remotely, we do not invent fake structure like “two days a week in office” or “three days a week or else.” That is theater.</p>
-
-            <p><strong>Work from elsewhere is allowed.</strong> Want to work out of the country for a month? Fine, if the role can stay remote and the work still gets done. Trust outcomes, not badges on a door.</p>
-
-            <p><strong>Shared meetup days, not attendance theater.</strong> People still need to meet people. We plan occasional shared days (monthly, or every couple of weeks) for team building, demos, and face time. Rent a WeWork conference room or similar for those days. Not a daily commute mandate. Strongly encouraged so the team stays human, not a punishment calendar.</p>
-          </div>
-        </details>
-
-        <details class="playbook-panel" id="see-the-company">
-          <summary>See the company, see the world</summary>
-          <div class="body">
-            <p><strong>International is a feature.</strong> If we grow into an international company with locations, people should be empowered to visit them, not stuck forever in one seat on a map.</p>
-
-            <p><strong>Explore operations and cultures.</strong> Want to spend time at the Turkey location, or Mexico, or wherever we plant a flag? You should be able to go, work from that office, meet coworkers from different places, and learn how the company actually runs elsewhere.</p>
-
-            <p>That is career development and team building in one move: see the business, see the world, bring the perspective home.</p>
-          </div>
-        </details>
-      </div>
+      <section class="playbook-block" id="see-the-company">
+        <h2>See the company, see the world</h2>
+        <div class="body">
+          <p><strong>International is a feature.</strong> If we grow into an international company with locations, people should be empowered to visit them, not stuck forever in one seat on a map.</p>
+          <p><strong>Explore operations and cultures.</strong> Want to spend time at the Turkey location, or Mexico, or wherever we plant a flag? You should be able to go, work from that office, meet coworkers from different places, and learn how the company actually runs elsewhere.</p>
+          <p>That is career development and team building in one move: see the business, see the world, bring the perspective home.</p>
+        </div>
+      </section>
     </article>
   </main>
   <footer class="site-footer">
     <div class="wrap">
       <span>© 2026 Kaan Esendemir</span>
-      <span class="site-version">v3.4.0</span>
+      <span class="site-version">v3.4.2</span>
     </div>
   </footer>
-  <script src="/js/site.js" defer></script>
-  <script>
-    (function () {
-      document.querySelectorAll(".playbook-jump a").forEach(function (link) {
-        link.addEventListener("click", function () {
-          var id = (link.getAttribute("href") || "").slice(1);
-          var panel = id && document.getElementById(id);
-          if (panel && panel.tagName === "DETAILS") {
-            panel.open = true;
-          }
-        });
-      });
-
-      if (location.hash) {
-        var target = document.getElementById(location.hash.slice(1));
-        if (target && target.tagName === "DETAILS") {
-          target.open = true;
-        }
-      }
-    })();
-  </script>
+  <script src="/js/site.js?v=3.4.2" defer></script>
 </body>
 </html>
