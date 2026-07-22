@@ -952,13 +952,89 @@ img {
   margin-bottom: 1rem;
 }
 
-.vision-section-title {
-  margin: 0 0 1rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.playbook .summary {
+  margin: 0 auto 1.5rem;
+  max-width: 42ch;
+}
+
+.playbook-jump {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 0.85rem;
+  margin: 0 0 1.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.playbook-jump a {
   color: var(--accent);
+}
+
+.playbook-jump a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.playbook-sections {
+  display: grid;
+  gap: 0.65rem;
+  text-align: left;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.playbook-panel {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.playbook-panel summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 1.15rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  user-select: none;
+}
+
+.playbook-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.playbook-panel summary::after {
+  content: "+";
+  flex-shrink: 0;
+  width: 1.25rem;
+  text-align: center;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.playbook-panel[open] summary::after {
+  content: "–";
+}
+
+.playbook-panel summary:hover {
+  color: var(--accent);
+}
+
+.playbook-panel .body {
+  padding: 0 1.15rem 1.15rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+
+.playbook-panel .body :first-child {
+  margin-top: 0;
 }
 
 .page-title {

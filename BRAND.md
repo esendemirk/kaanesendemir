@@ -9,7 +9,7 @@
 - **Footer:** © name + `vX.Y.Z`
 - **Home:** Hero + CTAs only (centered); sticky footer; no newsletter
 - **Layout:** Centered nav and page content
-- **Vision:** `/vision/` future-company rules (meetings + vacation); `noindex`
+- **Playbook:** `/playbook/` future-company operating rules (collapsible sections); `noindex`
 - **Tools:** `/tools/` category capsules + search; public for now, `noindex`; gate later
 - **No Experience / blog / press pages** on the site
 - **No public email/phone** on the site
@@ -39,7 +39,8 @@ Font: **Inter**
 | `/` | Hero + LinkedIn / projects CTAs only |
 | `/projects/` | All projects |
 | `/projects/[slug]/` | Share target: OG + LinkedIn share + copy link |
-| `/vision/` | Future-company setup (meetings + vacation); noindex |
+| `/playbook/` | Future-company playbook (collapsible sections); noindex |
+| `/vision/` | Redirects to `/playbook/` |
 | `/tools/` | Personal prompts with category capsules + search; noindex |
 
 ## Writing new pages
