@@ -1,15 +1,17 @@
-# Brand — Kaan Esendemir
+# Brand - Kaan Esendemir
 
 ## Site positioning (v3)
 
-- **Goal:** Notable personal presence — enterprise systems · AI adoption · education
-- **Stack:** Pure static HTML / CSS / vanilla JS → Cloudflare Pages (**no build**)
+- **Goal:** Notable personal presence: enterprise systems, AI adoption, education
+- **Stack:** Pure static HTML / CSS / vanilla JS on Cloudflare Pages (**no build**)
 - **CTA:** LinkedIn + Buttondown newsletter (stub until username set)
-- **No top-right header chrome** — CTAs live in the page body
-- **Footer:** © name + `vX.Y.Z`
-- **Blog:** `/blog/` — public HTML posts; SEO + breadcrumbs + LinkedIn share
-- **Vision board:** `/vision/` — leadership / “how I’d run a company”; `noindex`
-- **Tools:** `/tools/` public for now, `noindex`; gate later
+- **No top-right header chrome:** CTAs live in the page body
+- **Footer:** c name + `vX.Y.Z`
+- **Home:** Hero, primary CTAs, and newsletter only (no credentials/press/projects blocks)
+- **Credentials / press:** Own pages at `/credentials/` and `/press/`
+- **Blog:** `/blog/` public HTML posts; SEO + breadcrumbs + LinkedIn share
+- **Vision:** `/vision/` meeting-calendar principles only; `noindex`
+- **Tools:** `/tools/` category capsules + search; public for now, `noindex`; gate later
 - **No public email/phone** on the site
 
 ## Title line
@@ -34,13 +36,15 @@ Font: **Inter**
 
 | Route | Notes |
 |-------|--------|
-| `/` | Hero, CTAs, projects preview, credentials, press |
+| `/` | Hero + CTAs + newsletter only |
+| `/credentials/` | Degrees, certs, teaching |
+| `/press/` | Selected press and mentions |
 | `/projects/` | All projects |
-| `/projects/[slug]/` | Share target — OG + LinkedIn share + copy link |
-| `/blog/` | Public posts — SEO, breadcrumbs, LinkedIn share |
-| `/blog/[slug]/` | Post page — OG thumbnail + title, ShareBar |
-| `/vision/` | Running leadership vision board — noindex |
-| `/tools/` | Personal prompts — noindex |
+| `/projects/[slug]/` | Share target: OG + LinkedIn share + copy link |
+| `/blog/` | Public posts: SEO, breadcrumbs, LinkedIn share |
+| `/blog/[slug]/` | Post page: OG thumbnail + title, ShareBar |
+| `/vision/` | Meeting-calendar principles only; noindex |
+| `/tools/` | Personal prompts with category capsules + search; noindex |
 
 ## Writing new pages
 
@@ -61,8 +65,8 @@ Then **Purge Everything** if an old deploy was edge-cached.
 
 - Source: [`VERSION`](VERSION)
 - Footer versions in HTML must match
-- Ship by default: bump → commit → push (`.cursor/rules/ship.mdc`)
+- Ship by default: bump, commit, push (`.cursor/rules/ship.mdc`)
 
 ## Book (offline from primary site chrome)
 
-Tracked offline for now — not listed in the public projects grid.
+Tracked offline for now - not listed in the public projects grid.

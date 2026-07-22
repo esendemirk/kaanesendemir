@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Tools — Kaan Esendemir</title>
+  <title>Tools | Kaan Esendemir</title>
   <meta name="description" content="Personal prompt library for Kaan Esendemir." />
   <link rel="canonical" href="https://kaanesendemir.com/tools/" />
   <meta name="theme-color" content="#ED1E45" />
@@ -27,12 +27,36 @@
       <h1 class="page-title">Tools</h1>
       <p class="muted intro">
         Personal prompts for architecture, adoption, and teaching. Copy what you need. Gating
-        comes later — do not store secrets here.
+        comes later. Do not store secrets here.
       </p>
-      <ul class="tool-list">
-        <li class="tool">
+
+      <div class="tools-filters">
+        <label class="tools-search-label" for="tool-search">Search prompts</label>
+        <input
+          id="tool-search"
+          class="tools-search"
+          type="search"
+          placeholder="Filter by title or text…"
+          autocomplete="off"
+          data-tool-search
+        />
+        <div class="capsule-row" role="group" aria-label="Categories">
+          <button type="button" class="capsule is-active" data-tool-category="all" aria-pressed="true">All</button>
+          <button type="button" class="capsule" data-tool-category="adoption" aria-pressed="false">Adoption</button>
+          <button type="button" class="capsule" data-tool-category="architecture" aria-pressed="false">Architecture</button>
+          <button type="button" class="capsule" data-tool-category="teaching" aria-pressed="false">Teaching</button>
+        </div>
+      </div>
+
+      <p class="tools-empty muted" data-tools-empty hidden>No prompts match.</p>
+
+      <ul class="tool-list" data-tool-list>
+        <li class="tool" data-tool data-category="adoption" data-search="careful ai adoption brief enterprise team practical first win hesitation judgment">
           <div class="tool-head">
-            <h2>Careful AI adoption brief</h2>
+            <div class="tool-title-row">
+              <h2>Careful AI adoption brief</h2>
+              <span class="capsule capsule-static">Adoption</span>
+            </div>
             <button class="btn btn-ghost" type="button" data-copy-prompt data-prompt="You are helping a careful enterprise team adopt AI. Goal: one practical first win this week.
 
 Constraints:
@@ -51,9 +75,12 @@ Constraints:
 
 Ask: who is the user, what workflow hurts most, what must never be automated, and what success looks like in 7 days. Then propose one small start.</pre>
         </li>
-        <li class="tool">
+        <li class="tool" data-tool data-category="architecture" data-search="architecture review plain english reliability operability ai integration risks load">
           <div class="tool-head">
-            <h2>Architecture review (plain English)</h2>
+            <div class="tool-title-row">
+              <h2>Architecture review (plain English)</h2>
+              <span class="capsule capsule-static">Architecture</span>
+            </div>
             <button class="btn btn-ghost" type="button" data-copy-prompt data-prompt="Review this architecture for reliability, operability, and AI integration risks. Respond in plain English with:
 1) What works
 2) What will break under load
@@ -72,9 +99,12 @@ Architecture:
 Architecture:
 [paste]</pre>
         </li>
-        <li class="tool">
+        <li class="tool" data-tool data-category="teaching" data-search="teach professor students definition analogy example mistake practice question">
           <div class="tool-head">
-            <h2>Teach it like a professor</h2>
+            <div class="tool-title-row">
+              <h2>Teach it like a professor</h2>
+              <span class="capsule capsule-static">Teaching</span>
+            </div>
             <button class="btn btn-ghost" type="button" data-copy-prompt data-prompt="Explain this concept for mixed-experience students (some brand new, some working engineers). Use:
 - One plain definition
 - One analogy
@@ -102,7 +132,7 @@ Topic:
   <footer class="site-footer">
     <div class="wrap">
       <span>© 2026 Kaan Esendemir</span>
-      <span class="site-version">v3.0.1</span>
+      <span class="site-version">v3.1.0</span>
     </div>
   </footer>
   <script src="/js/site.js" defer></script>
