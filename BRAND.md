@@ -4,10 +4,10 @@
 
 - **Goal:** Notable personal presence: enterprise systems, AI adoption, education
 - **Stack:** Pure static HTML / CSS / vanilla JS on Cloudflare Pages (**no build**)
-- **CTA:** LinkedIn + Buttondown newsletter (stub until username set)
+- **CTA:** LinkedIn (primary) + See projects
 - **No top-right header chrome:** CTAs live in the page body
-- **Footer:** c name + `vX.Y.Z`
-- **Home:** Hero, primary CTAs, and newsletter only (centered)
+- **Footer:** © name + `vX.Y.Z`
+- **Home:** Hero + CTAs only (centered); no newsletter form
 - **Layout:** Centered nav and page content
 - **Credentials / press:** Own pages at `/credentials/` and `/press/`
 - **Vision:** `/vision/` meeting-calendar principles only; `noindex`
@@ -37,7 +37,7 @@ Font: **Inter**
 
 | Route | Notes |
 |-------|--------|
-| `/` | Hero + CTAs + newsletter only |
+| `/` | Hero + LinkedIn / projects CTAs only |
 | `/credentials/` | Degrees, certs, teaching |
 | `/press/` | Selected press and mentions |
 | `/projects/` | All projects |
