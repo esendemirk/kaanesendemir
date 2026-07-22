@@ -16,18 +16,23 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="anchor-nav" aria-label="Site">
+        <a href="/">Home</a>
+        <a href="/projects/">Projects</a>
+        <a href="/experience/">Experience</a>
+        <a href="/vision/">Vision</a>
+        <a href="/tools/" aria-current="page">Tools</a>
+      </nav>
+    </div>
+  </header>
   <main id="main" class="section">
     <div class="wrap tools">
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <ol>
-          <li><a href="/">Home</a><span class="sep" aria-hidden="true">/</span></li>
-          <li><span aria-current="page">Tools</span></li>
-        </ol>
-      </nav>
       <h1 class="page-title">Tools</h1>
       <p class="muted intro">
-        Personal prompts for architecture, adoption, and teaching. Copy what you need. Gating
-        comes later. Do not store secrets here.
+        Personal prompts for architecture, adoption, and teaching. Copy what you need.
+        Do not store secrets here.
       </p>
 
       <div class="tools-filters">
@@ -36,8 +41,9 @@
           id="tool-search"
           class="tools-search"
           type="search"
-          placeholder="Filter by title or text…"
+          placeholder="Search prompts"
           autocomplete="off"
+          spellcheck="false"
           data-tool-search
         />
         <div class="capsule-row" role="group" aria-label="Categories">
@@ -48,7 +54,7 @@
         </div>
       </div>
 
-      <p class="tools-empty muted" data-tools-empty hidden>No prompts match.</p>
+      <p class="tools-empty is-hidden muted" data-tools-empty aria-hidden="true">No prompts match.</p>
 
       <ul class="tool-list" data-tool-list>
         <li class="tool" data-tool data-category="adoption" data-search="careful ai adoption brief enterprise team practical first win hesitation judgment">
@@ -132,7 +138,7 @@ Topic:
   <footer class="site-footer">
     <div class="wrap">
       <span>© 2026 Kaan Esendemir</span>
-      <span class="site-version">v3.1.2</span>
+      <span class="site-version">v3.2.1</span>
     </div>
   </footer>
   <script src="/js/site.js" defer></script>
