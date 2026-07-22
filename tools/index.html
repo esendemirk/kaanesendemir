@@ -12,12 +12,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/site.css?v=3.9.0" />
+  <link rel="stylesheet" href="/css/site.css?v=4.0.0" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap">
+    <a class="skip-link" href="#main">Skip to content</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle aria-label="Open menu">
+    <span class="nav-toggle-bars" aria-hidden="true"></span>
+  </button>
+  <div class="nav-backdrop" data-nav-backdrop hidden></div>
+  <aside class="site-nav" id="site-nav" data-site-nav>
+    <div class="site-nav-inner">
+      <a class="site-mark" href="/" aria-label="Kaan Esendemir home">KE</a>
       <nav class="anchor-nav" aria-label="Site">
         <a href="/">Home</a>
         <a href="/projects/">Projects</a>
@@ -25,8 +30,8 @@
         <a href="/tools/" aria-current="page">Tools</a>
       </nav>
     </div>
-  </header>
-  <main id="main" class="section">
+  </aside>
+<main id="main" class="section">
     <div class="wrap tools">
       <h1 class="page-title">Tools</h1>
       <p class="muted intro">Personal prompts for architecture, adoption, and teaching.</p>
@@ -140,9 +145,9 @@ Topic:
   <footer class="site-footer">
     <div class="wrap">
       <span>© 2026 Kaan Esendemir</span>
-      <span class="site-version">v3.9.0</span>
+      <span class="site-version">v4.0.0</span>
     </div>
   </footer>
-  <script src="/js/site.js?v=3.9.0" defer></script>
+  <script src="/js/site.js?v=4.0.0" defer></script>
 </body>
 </html>
