@@ -1,21 +1,21 @@
 # Brand — Kaan Esendemir
 
-## Site positioning (v2)
+## Site positioning (v3)
 
 - **Goal:** Notable personal presence — enterprise systems · AI adoption · education
-- **Stack:** Astro static → Cloudflare Pages (`dist/`)
+- **Stack:** Pure static HTML / CSS / vanilla JS → Cloudflare Pages (**no build**)
 - **CTA:** LinkedIn + Buttondown newsletter (stub until username set)
 - **No top-right header chrome** — CTAs live in the page body
 - **Footer:** © name + `vX.Y.Z`
-- **Tools:** `/tools` public for now, `noindex`; gate later
-- **Blog:** `/blog` — public Markdown posts; SEO + breadcrumbs + LinkedIn share
-- **Vision board:** `/vision` — leadership / “how I’d run a company”; Markdown chapters; `noindex`
+- **Blog:** `/blog/` — public HTML posts; SEO + breadcrumbs + LinkedIn share
+- **Vision board:** `/vision/` — leadership / “how I’d run a company”; `noindex`
+- **Tools:** `/tools/` public for now, `noindex`; gate later
 - **No public email/phone** on the site
 
 ## Title line
 
 **Application Architect · Adjunct Professor**  
-(AI called out in copy and `knowsAbout`, not jammed into the job title)
+(AI called out in copy and Person JSON-LD, not jammed into the job title)
 
 ## Site palette
 
@@ -35,18 +35,32 @@ Font: **Inter**
 | Route | Notes |
 |-------|--------|
 | `/` | Hero, CTAs, projects preview, credentials, press |
-| `/projects` | All projects |
-| `/projects/[slug]` | Share target — OG + LinkedIn share + copy link |
-| `/tools` | Personal prompts — noindex |
-| `/blog` | Public posts — SEO, breadcrumbs, LinkedIn share |
-| `/blog/[slug]` | Post page — OG thumbnail + title, ShareBar |
-| `/vision` | Running leadership vision board — Markdown chapters, noindex |
-| `/vision/[slug]` | Single chapter (wiki-style deep link) — noindex |
+| `/projects/` | All projects |
+| `/projects/[slug]/` | Share target — OG + LinkedIn share + copy link |
+| `/blog/` | Public posts — SEO, breadcrumbs, LinkedIn share |
+| `/blog/[slug]/` | Post page — OG thumbnail + title, ShareBar |
+| `/vision/` | Running leadership vision board — noindex |
+| `/tools/` | Personal prompts — noindex |
+
+## Writing new pages
+
+Add a folder with `index.html` (e.g. `blog/my-post/index.html`), link it from the index, update `sitemap.xml` for public pages, bump `VERSION` + footers, commit, push.
+
+## Cloudflare Pages
+
+| Setting | Value |
+|---------|--------|
+| Build command | *(empty)* |
+| Build output directory | `/` |
+| Root directory | *(empty)* |
+| Production branch | `main` |
+
+Then **Purge Everything** if an old deploy was edge-cached.
 
 ## Versioning
 
 - Source: [`VERSION`](VERSION)
-- Sync `SITE_VERSION` in [`src/config.ts`](src/config.ts)
+- Footer versions in HTML must match
 - Ship by default: bump → commit → push (`.cursor/rules/ship.mdc`)
 
 ## Book (offline from primary site chrome)
@@ -55,10 +69,4 @@ Font: **Inter**
 |-------|--------|
 | Title | Careful with AI |
 | Subtitle | What I've Learned Driving Adoption |
-| Status | Tracked as a **project** page for LinkedIn sharing |
-
-Book Soft Citron system: [`brand-system/COLORS-AND-TYPE.md`](brand-system/COLORS-AND-TYPE.md)
-
-## LinkedIn
-
-https://www.linkedin.com/in/kaanesendemir/
+| Site role | Project page for LinkedIn sharing |
