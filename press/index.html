@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Press | Kaan Esendemir</title>
-  <meta name="description" content="Articles, interviews, and mentions featuring Enterprise AI Architect and Adjunct Instructor Kaan Esendemir." />
+  <title>Press &amp; Media | Kaan Esendemir, Enterprise AI Architect</title>
+  <meta name="description" content="Selected media coverage of Enterprise AI Architect Kaan Esendemir, including ZDNET and Montclair State University." />
   <link rel="canonical" href="https://kaanesendemir.com/press/" />
   <meta name="theme-color" content="#0F256E" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kaanesendemir.com/press/" />
-  <meta property="og:title" content="Press | Kaan Esendemir" />
-  <meta property="og:description" content="Articles, interviews, and mentions featuring Kaan Esendemir." />
+  <meta property="og:title" content="Press &amp; Media | Kaan Esendemir" />
+  <meta property="og:description" content="Selected media coverage of Enterprise AI Architect Kaan Esendemir." />
   <meta property="og:image" content="https://kaanesendemir.com/images/headshot.png" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/site.css?v=5.0.3" />
+  <link rel="stylesheet" href="/css/site.css?v=5.1.0" />
 </head>
 <body class="press-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -37,40 +37,32 @@
   </aside>
   <main id="main" class="section">
     <div class="wrap">
-      <h1 class="page-title">Press</h1>
-      <p class="muted intro">Mentions, quotes, and features. Newest first.</p>
-      <ul class="press-list press-list-full" data-press-list>
-        <li class="press-row">
-          <a class="press-thumb" href="https://www.montclair.edu/newscenter/2026/07/23/alumni-voices-how-a-montclair-information-technology-graduate-built-a-career-at-ups/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
-            <img src="/images/press/montclair-alumni.jpg" alt="" width="160" height="90" loading="lazy" />
-          </a>
-          <div class="press-row-main">
-            <p class="press-meta"><span class="press-outlet">Montclair State University</span><span class="press-dot" aria-hidden="true">·</span><time datetime="2026-07-23">July 23, 2026</time></p>
-            <a class="press-row-title" href="https://www.montclair.edu/newscenter/2026/07/23/alumni-voices-how-a-montclair-information-technology-graduate-built-a-career-at-ups/" target="_blank" rel="noopener noreferrer">Alumni Voices: How a Montclair Information Technology Graduate Built a Career at UPS</a>
-            <p class="press-desc">Wondering what career paths are possible with a degree in IT? Meet Kaan Esendemir '18, whose visit to a Montclair career fair led to a role at a Fortune 50 company.</p>
-          </div>
-        </li>
-        <li class="press-row">
-          <a class="press-thumb" href="https://www.zdnet.com/article/top-ai-fear-tech-survey/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
-            <img src="/images/press/zdnet-ai-fear.jpg" alt="" width="160" height="90" loading="lazy" />
-          </a>
-          <div class="press-row-main">
-            <p class="press-meta"><span class="press-outlet">ZDNET</span><span class="press-dot" aria-hidden="true">·</span><time datetime="2026-07-20">July 20, 2026</time></p>
-            <a class="press-row-title" href="https://www.zdnet.com/article/top-ai-fear-tech-survey/" target="_blank" rel="noopener noreferrer">The top AI fear for 6,000 tech pros isn't losing their jobs - it's more work for the same pay</a>
-            <p class="press-desc">Most tech professionals wouldn't recommend their own role to someone entering the industry today. Includes commentary from Kaan Esendemir on AI workload pressure in enterprise roles.</p>
-            <p class="press-also-row"><a class="press-also" href="https://tech.yahoo.com/ai/articles/top-ai-fear-6-000-122402199.html" target="_blank" rel="noopener noreferrer">Also on Yahoo Tech</a></p>
-          </div>
-        </li>
-      </ul>
+      <h1 class="page-title">Press &amp; Media</h1>
+      <p class="muted intro">Selected media coverage. Newest first.</p>
+      <div class="press-toolbar">
+        <label class="press-search-label" for="press-search">Search coverage</label>
+        <input
+          id="press-search"
+          class="press-search"
+          type="search"
+          placeholder="Search by outlet, title, or keyword"
+          autocomplete="off"
+          spellcheck="false"
+          data-press-search
+        />
+        <p class="press-status muted" data-press-status aria-live="polite"></p>
+      </div>
+      <ul class="press-list press-list-full" data-press-list data-press-paginate data-press-page-size="4"></ul>
+      <nav class="press-pager" data-press-pager aria-label="Press pages" hidden></nav>
     </div>
   </main>
   <footer class="site-footer">
     <div class="wrap">
       <span>© 2026 Kaan Esendemir</span>
-      <span class="site-version">v5.0.3</span>
+      <span class="site-version">v5.1.0</span>
     </div>
   </footer>
-  <script src="/js/site.js?v=5.0.3" defer></script>
-  <script src="/js/press.js?v=5.0.3" defer></script>
+  <script src="/js/site.js?v=5.1.0" defer></script>
+  <script src="/js/press.js?v=5.1.0" defer></script>
 </body>
 </html>

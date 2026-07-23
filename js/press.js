@@ -1,4 +1,6 @@
 (function () {
+  var PAGE_SIZE = 4;
+
   function escapeHtml(str) {
     return String(str || "")
       .replace(/&/g, "&amp;")
@@ -11,6 +13,14 @@
     return items.slice().sort(function (a, b) {
       return String(b.date).localeCompare(String(a.date));
     });
+  }
+
+  function normalize(str) {
+    return String(str || "")
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
   }
 
   function collectOutlets(items) {
@@ -32,6 +42,23 @@
     });
 
     return outlets;
+  }
+
+  function itemMatches(item, query) {
+    if (!query) return true;
+    var parts = normalize(query).split(" ").filter(Boolean);
+    if (!parts.length) return true;
+    var also = (item.alsoOn || [])
+      .map(function (a) {
+        return a.outlet + " " + a.url;
+      })
+      .join(" ");
+    var hay = normalize(
+      [item.outlet, item.title, item.description, item.dateLabel, also].join(" ")
+    );
+    return parts.every(function (part) {
+      return hay.indexOf(part) !== -1;
+    });
   }
 
   function listRowHtml(item) {
@@ -81,13 +108,6 @@
     );
   }
 
-  function renderList(list, items) {
-    var sorted = sortNewest(items);
-    var limit = list.getAttribute("data-press-limit");
-    if (limit) sorted = sorted.slice(0, parseInt(limit, 10) || sorted.length);
-    list.innerHTML = sorted.map(listRowHtml).join("");
-  }
-
   function renderBanner(banner, items) {
     var outlets = collectOutlets(items);
     if (!outlets.length) {
@@ -101,7 +121,6 @@
       })
       .join('<span class="featured-sep" aria-hidden="true">·</span>');
 
-    // Duplicate for a seamless CSS marquee loop
     banner.innerHTML =
       '<div class="featured-banner-inner">' +
       '<span class="featured-label">Featured in</span>' +
@@ -117,6 +136,95 @@
     banner.hidden = false;
   }
 
+  function setupPressList(list, allItems) {
+    var pageSize =
+      parseInt(list.getAttribute("data-press-page-size"), 10) || PAGE_SIZE;
+    var searchInput = document.querySelector("[data-press-search]");
+    var pager = document.querySelector("[data-press-pager]");
+    var status = document.querySelector("[data-press-status]");
+    var page = 1;
+
+    function filtered() {
+      var q = searchInput ? searchInput.value : "";
+      return sortNewest(allItems).filter(function (item) {
+        return itemMatches(item, q);
+      });
+    }
+
+    function render() {
+      var items = filtered();
+      var totalPages = Math.max(1, Math.ceil(items.length / pageSize));
+      if (page > totalPages) page = totalPages;
+      if (page < 1) page = 1;
+
+      var start = (page - 1) * pageSize;
+      var slice = items.slice(start, start + pageSize);
+
+      if (!items.length) {
+        list.innerHTML =
+          '<li class="press-empty muted">No coverage matches that search.</li>';
+      } else {
+        list.innerHTML = slice.map(listRowHtml).join("");
+      }
+
+      if (status) {
+        if (!items.length) {
+          status.textContent = "0 results";
+        } else {
+          var from = start + 1;
+          var to = start + slice.length;
+          status.textContent =
+            "Showing " + from + "–" + to + " of " + items.length;
+        }
+      }
+
+      if (pager) {
+        if (totalPages <= 1) {
+          pager.innerHTML = "";
+          pager.hidden = true;
+        } else {
+          pager.hidden = false;
+          pager.innerHTML =
+            '<button type="button" class="press-page-btn" data-press-prev' +
+            (page <= 1 ? " disabled" : "") +
+            ">Previous</button>" +
+            '<span class="press-page-label">Page ' +
+            page +
+            " of " +
+            totalPages +
+            "</span>" +
+            '<button type="button" class="press-page-btn" data-press-next' +
+            (page >= totalPages ? " disabled" : "") +
+            ">Next</button>";
+        }
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener("input", function () {
+        page = 1;
+        render();
+      });
+      searchInput.addEventListener("search", function () {
+        page = 1;
+        render();
+      });
+    }
+
+    if (pager) {
+      pager.addEventListener("click", function (event) {
+        var btn = event.target.closest("[data-press-prev], [data-press-next]");
+        if (!btn || btn.disabled) return;
+        if (btn.hasAttribute("data-press-prev")) page -= 1;
+        if (btn.hasAttribute("data-press-next")) page += 1;
+        render();
+        list.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      });
+    }
+
+    render();
+  }
+
   var lists = document.querySelectorAll("[data-press-list]");
   var banners = document.querySelectorAll("[data-featured-banner]");
   if (!lists.length && !banners.length) return;
@@ -128,7 +236,16 @@
     })
     .then(function (items) {
       lists.forEach(function (list) {
-        renderList(list, items);
+        if (list.hasAttribute("data-press-paginate")) {
+          setupPressList(list, items);
+        } else {
+          var sorted = sortNewest(items);
+          var limit = list.getAttribute("data-press-limit");
+          if (limit) {
+            sorted = sorted.slice(0, parseInt(limit, 10) || sorted.length);
+          }
+          list.innerHTML = sorted.map(listRowHtml).join("");
+        }
       });
       banners.forEach(function (banner) {
         renderBanner(banner, items);
