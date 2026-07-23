@@ -47,8 +47,19 @@
       })
       .join('<span class="press-dot" aria-hidden="true">·</span>');
 
+    var thumb = item.image
+      ? '<a class="press-thumb" href="' +
+        escapeHtml(item.url) +
+        '" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">' +
+        '<img src="' +
+        escapeHtml(item.image) +
+        '" alt="" width="160" height="90" loading="lazy" />' +
+        "</a>"
+      : '<span class="press-thumb press-thumb-empty" aria-hidden="true"></span>';
+
     return (
       '<li class="press-row">' +
+      thumb +
       '<div class="press-row-main">' +
       '<p class="press-meta"><span class="press-outlet">' +
       escapeHtml(item.outlet) +
