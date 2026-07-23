@@ -1,0 +1,29 @@
+[
+  {
+    "id": "montclair-alumni-voices-2026",
+    "date": "2026-07-23",
+    "dateLabel": "July 23, 2026",
+    "outlet": "Montclair State University",
+    "title": "Alumni Voices: How a Montclair Information Technology Graduate Built a Career at UPS",
+    "description": "Wondering what career paths are possible with a degree in IT? Meet Kaan Esendemir '18, whose visit to a Montclair career fair led to a role at a Fortune 50 company.",
+    "url": "https://www.montclair.edu/newscenter/2026/07/23/alumni-voices-how-a-montclair-information-technology-graduate-built-a-career-at-ups/",
+    "image": "/images/press/montclair-alumni.jpg",
+    "alsoOn": []
+  },
+  {
+    "id": "zdnet-top-ai-fear-2026",
+    "date": "2026-07-20",
+    "dateLabel": "July 20, 2026",
+    "outlet": "ZDNET",
+    "title": "The top AI fear for 6,000 tech pros isn't losing their jobs - it's more work for the same pay",
+    "description": "Most tech professionals wouldn't recommend their own role to someone entering the industry today. Includes commentary from Kaan Esendemir on AI workload pressure in enterprise roles.",
+    "url": "https://www.zdnet.com/article/top-ai-fear-tech-survey/",
+    "image": "/images/press/zdnet-ai-fear.jpg",
+    "alsoOn": [
+      {
+        "outlet": "Yahoo Tech",
+        "url": "https://tech.yahoo.com/ai/articles/top-ai-fear-6-000-122402199.html"
+      }
+    ]
+  }
+]

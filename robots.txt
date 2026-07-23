@@ -3,5 +3,4 @@ Allow: /
 Disallow: /tools/
 Disallow: /playbook/
 Disallow: /vision/
-
 Sitemap: https://kaanesendemir.com/sitemap.xml
