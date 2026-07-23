@@ -17,4 +17,4 @@ Public-figure landing site aimed at notability (press, quotes, Wikipedia-ready f
 Add coverage to `data/press.json` (newest first). Include date, outlet, title, description, image, url. Same story syndicated elsewhere goes in `alsoOn` (e.g. ZDNET + Yahoo Tech). Local thumbnails live in `images/press/`.
 
 ## Accent
-`#0F256E` navy
+Soft Citron `#D4E157` (fills / marks) · ink `#4A5610` (text on light)
