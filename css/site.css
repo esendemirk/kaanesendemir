@@ -8,7 +8,7 @@
   --accent-text: #ffffff;
   --focus: #0f256e;
   --font: "DM Sans", "Segoe UI", system-ui, sans-serif;
-  --font-display: Syne, "DM Sans", system-ui, sans-serif;
+  --font-display: "Syne", "DM Sans", system-ui, sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --max: 1360px;
   --gutter: 1.25rem;
@@ -677,13 +677,14 @@ body.nav-open .site-nav {
   gap: 2.75rem;
 }
 
+a.site-mark,
 .site-mark {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
   width: fit-content;
-  font-family: var(--font-display);
-  font-size: 0.9rem;
+  font-family: "Syne", "DM Sans", system-ui, sans-serif;
+  font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1101,7 +1102,9 @@ body.page-home .featured-banner.hero-reveal {
 .article h1,
 .page-title {
   margin: 0 0 0.75rem;
+  font-family: "Syne", "DM Sans", system-ui, sans-serif;
   font-size: clamp(2rem, 4.5vw, 2.8rem);
+  font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.1;
 }
