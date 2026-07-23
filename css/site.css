@@ -9,7 +9,7 @@
   --focus: #0f256e;
   --font: Inter, "Open Sans", "Segoe UI", system-ui, sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --max: 1120px;
+  --max: 1360px;
   --gutter: 1.25rem;
   --nav-w: 12.5rem;
   --nav-pad-top: 4.5rem;
@@ -170,13 +170,19 @@ body.page-home .site-footer {
 }
 
 .press-page .wrap {
-  max-width: min(1040px, 100%);
+  max-width: min(1480px, 100%);
   text-align: left;
 }
 
 .press-page .page-title,
 .press-page .intro {
-  text-align: center;
+  text-align: left;
+  max-width: none;
+}
+
+.press-page .intro {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .press-row {
@@ -1513,11 +1519,25 @@ a.jump-pill:hover {
 @media (min-width: 900px) {
   :root {
     --nav-pad-top: 0;
+    --gutter: 2rem;
+    --max: 1480px;
   }
 
   body {
     padding-top: 0;
     padding-left: var(--nav-w);
+  }
+
+  .press-page .wrap {
+    max-width: min(1600px, calc(100vw - var(--nav-w) - 2 * var(--gutter)));
+  }
+
+  .press-row-title {
+    font-size: 1.2rem;
+  }
+
+  .press-desc {
+    max-width: 70ch;
   }
 
   .nav-toggle,
