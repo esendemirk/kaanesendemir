@@ -833,7 +833,7 @@ body {
 }
 
 .home-voice {
-  margin: 0 auto 1.25rem;
+  margin: 0 auto 0.85rem;
   max-width: 28ch;
   font-size: 1.05rem;
   font-weight: 500;
@@ -870,8 +870,12 @@ body.page-home .home-voice.hero-reveal {
   animation-delay: 320ms;
 }
 
+body.page-home .profile-links.hero-reveal {
+  animation-delay: 380ms;
+}
+
 body.page-home .featured-banner.hero-reveal {
-  animation-delay: 400ms;
+  animation-delay: 460ms;
 }
 
 @keyframes home-rise {
@@ -889,27 +893,88 @@ body.page-home .featured-banner.hero-reveal {
   }
 }
 
-.btn-linkedin-inline {
+.profile-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  list-style: none;
+  margin: 0 auto 1.15rem;
+  padding: 0;
+}
+
+.profile-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 6px;
-  background: var(--accent);
-  color: var(--accent-text);
-  flex: 0 0 auto;
-  transition: filter 160ms var(--ease);
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid rgba(15, 20, 25, 0.12);
+  background: var(--surface);
+  color: var(--text);
+  transition:
+    transform 160ms var(--ease),
+    border-color 160ms var(--ease),
+    background-color 160ms var(--ease),
+    color 160ms var(--ease),
+    box-shadow 160ms var(--ease);
 }
 
-.btn-linkedin-inline:hover {
-  filter: brightness(1.08);
-}
-
-.btn-linkedin-inline svg {
+.profile-link svg {
   display: block;
-  width: 13px;
-  height: 13px;
+  width: 16px;
+  height: 16px;
+}
+
+.profile-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(15, 20, 25, 0.08);
+}
+
+.profile-link--linkedin {
+  color: #0a66c2;
+  border-color: rgba(10, 102, 194, 0.28);
+}
+
+.profile-link--linkedin:hover {
+  background: #0a66c2;
+  border-color: #0a66c2;
+  color: #fff;
+}
+
+.profile-link--github {
+  color: #24292f;
+  border-color: rgba(36, 41, 47, 0.22);
+}
+
+.profile-link--github:hover {
+  background: #24292f;
+  border-color: #24292f;
+  color: #fff;
+}
+
+.profile-link--orcid {
+  color: #a6ce39;
+  border-color: rgba(166, 206, 57, 0.4);
+}
+
+.profile-link--orcid:hover {
+  background: #a6ce39;
+  border-color: #a6ce39;
+  color: #fff;
+}
+
+.profile-link--scholar {
+  color: #4285f4;
+  border-color: rgba(66, 133, 244, 0.3);
+}
+
+.profile-link--scholar:hover {
+  background: #4285f4;
+  border-color: #4285f4;
+  color: #fff;
 }
 
 .lede {
