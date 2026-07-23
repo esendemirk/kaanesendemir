@@ -254,17 +254,7 @@ body.page-home .site-footer {
   margin-bottom: 0;
 }
 
-.press-page .press-toolbar,
 .work-page .press-status {
-  justify-items: center;
-  text-align: center;
-}
-
-.press-page .press-search {
-  margin-inline: auto;
-}
-
-.press-page .press-status {
   text-align: center;
 }
 

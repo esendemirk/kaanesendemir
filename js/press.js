@@ -15,14 +15,6 @@
     });
   }
 
-  function normalize(str) {
-    return String(str || "")
-      .toLowerCase()
-      .replace(/[^a-z0-9\s]/g, " ")
-      .replace(/\s+/g, " ")
-      .trim();
-  }
-
   function collectOutlets(items) {
     var seen = Object.create(null);
     var outlets = [];
@@ -42,23 +34,6 @@
     });
 
     return outlets;
-  }
-
-  function itemMatches(item, query) {
-    if (!query) return true;
-    var parts = normalize(query).split(" ").filter(Boolean);
-    if (!parts.length) return true;
-    var also = (item.alsoOn || [])
-      .map(function (a) {
-        return a.outlet + " " + a.url;
-      })
-      .join(" ");
-    var hay = normalize(
-      [item.outlet, item.title, item.description, item.dateLabel, also].join(" ")
-    );
-    return parts.every(function (part) {
-      return hay.indexOf(part) !== -1;
-    });
   }
 
   function listRowHtml(item) {
@@ -139,20 +114,11 @@
   function setupPressList(list, allItems) {
     var pageSize =
       parseInt(list.getAttribute("data-press-page-size"), 10) || PAGE_SIZE;
-    var searchInput = document.querySelector("[data-press-search]");
     var pager = document.querySelector("[data-press-pager]");
-    var status = document.querySelector("[data-press-status]");
     var page = 1;
 
-    function filtered() {
-      var q = searchInput ? searchInput.value : "";
-      return sortNewest(allItems).filter(function (item) {
-        return itemMatches(item, q);
-      });
-    }
-
     function render() {
-      var items = filtered();
+      var items = sortNewest(allItems);
       var totalPages = Math.max(1, Math.ceil(items.length / pageSize));
       if (page > totalPages) page = totalPages;
       if (page < 1) page = 1;
@@ -161,21 +127,9 @@
       var slice = items.slice(start, start + pageSize);
 
       if (!items.length) {
-        list.innerHTML =
-          '<li class="press-empty muted">No coverage matches that search.</li>';
+        list.innerHTML = '<li class="press-empty muted">No coverage yet.</li>';
       } else {
         list.innerHTML = slice.map(listRowHtml).join("");
-      }
-
-      if (status) {
-        if (!items.length) {
-          status.textContent = "0 results";
-        } else {
-          var from = start + 1;
-          var to = start + slice.length;
-          status.textContent =
-            "Showing " + from + "–" + to + " of " + items.length;
-        }
       }
 
       if (pager) {
@@ -193,17 +147,6 @@
           (page >= totalPages ? " disabled" : "") +
           ' aria-label="Next page">›</button>';
       }
-    }
-
-    if (searchInput) {
-      searchInput.addEventListener("input", function () {
-        page = 1;
-        render();
-      });
-      searchInput.addEventListener("search", function () {
-        page = 1;
-        render();
-      });
     }
 
     if (pager) {
