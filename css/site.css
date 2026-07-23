@@ -898,7 +898,7 @@ body.page-home .featured-banner.hero-reveal {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.55rem;
+  gap: 0.45rem;
   list-style: none;
   margin: 0 auto 1.15rem;
   padding: 0;
@@ -908,9 +908,9 @@ body.page-home .featured-banner.hero-reveal {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
   border: 1px solid rgba(15, 20, 25, 0.12);
   background: var(--surface);
   color: var(--text);
@@ -924,8 +924,8 @@ body.page-home .featured-banner.hero-reveal {
 
 .profile-link svg {
   display: block;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 }
 
 .profile-link:hover {
