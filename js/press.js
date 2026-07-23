@@ -7,7 +7,34 @@
       .replace(/"/g, "&quot;");
   }
 
-  function cardHtml(item, compact) {
+  function sortNewest(items) {
+    return items.slice().sort(function (a, b) {
+      return String(b.date).localeCompare(String(a.date));
+    });
+  }
+
+  function collectOutlets(items) {
+    var seen = Object.create(null);
+    var outlets = [];
+
+    sortNewest(items).forEach(function (item) {
+      var names = [item.outlet].concat(
+        (item.alsoOn || []).map(function (a) {
+          return a.outlet;
+        })
+      );
+      names.forEach(function (name) {
+        var key = String(name || "").trim().toLowerCase();
+        if (!key || seen[key]) return;
+        seen[key] = true;
+        outlets.push(String(name).trim());
+      });
+    });
+
+    return outlets;
+  }
+
+  function listRowHtml(item) {
     var also = (item.alsoOn || [])
       .map(function (a) {
         return (
@@ -18,20 +45,11 @@
           "</a>"
         );
       })
-      .join("");
+      .join('<span class="press-dot" aria-hidden="true">·</span>');
 
     return (
-      '<article class="press-card' +
-      (compact ? " press-card-compact" : "") +
-      '">' +
-      '<a class="press-card-media" href="' +
-      escapeHtml(item.url) +
-      '" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">' +
-      '<img src="' +
-      escapeHtml(item.image) +
-      '" alt="" width="1200" height="675" loading="lazy" />' +
-      "</a>" +
-      '<div class="press-card-body">' +
+      '<li class="press-row">' +
+      '<div class="press-row-main">' +
       '<p class="press-meta"><span class="press-outlet">' +
       escapeHtml(item.outlet) +
       '</span><span class="press-dot" aria-hidden="true">·</span><time datetime="' +
@@ -39,33 +57,58 @@
       '">' +
       escapeHtml(item.dateLabel) +
       "</time></p>" +
-      '<h3 class="press-title"><a href="' +
+      '<a class="press-row-title" href="' +
       escapeHtml(item.url) +
       '" target="_blank" rel="noopener noreferrer">' +
       escapeHtml(item.title) +
-      "</a></h3>" +
-      (compact
-        ? ""
-        : '<p class="press-desc">' + escapeHtml(item.description) + "</p>") +
+      "</a>" +
+      (item.description
+        ? '<p class="press-desc">' + escapeHtml(item.description) + "</p>"
+        : "") +
       (also ? '<p class="press-also-row">' + also + "</p>" : "") +
-      "</div></article>"
+      "</div></li>"
     );
   }
 
-  function render(list, items, compact) {
-    if (!list) return;
-    var sorted = items.slice().sort(function (a, b) {
-      return String(b.date).localeCompare(String(a.date));
-    });
+  function renderList(list, items) {
+    var sorted = sortNewest(items);
     var limit = list.getAttribute("data-press-limit");
     if (limit) sorted = sorted.slice(0, parseInt(limit, 10) || sorted.length);
-    list.innerHTML = sorted.map(function (item) {
-      return cardHtml(item, compact);
-    }).join("");
+    list.innerHTML = sorted.map(listRowHtml).join("");
   }
 
-  var targets = document.querySelectorAll("[data-press-list]");
-  if (!targets.length) return;
+  function renderBanner(banner, items) {
+    var outlets = collectOutlets(items);
+    if (!outlets.length) {
+      banner.hidden = true;
+      return;
+    }
+
+    var track = outlets
+      .map(function (name) {
+        return '<span class="featured-item">' + escapeHtml(name) + "</span>";
+      })
+      .join('<span class="featured-sep" aria-hidden="true">·</span>');
+
+    // Duplicate for a seamless CSS marquee loop
+    banner.innerHTML =
+      '<div class="featured-banner-inner">' +
+      '<span class="featured-label">Featured in</span>' +
+      '<div class="featured-viewport" aria-label="Featured outlets">' +
+      '<div class="featured-track">' +
+      '<div class="featured-group">' +
+      track +
+      "</div>" +
+      '<div class="featured-group" aria-hidden="true">' +
+      track +
+      "</div>" +
+      "</div></div></div>";
+    banner.hidden = false;
+  }
+
+  var lists = document.querySelectorAll("[data-press-list]");
+  var banners = document.querySelectorAll("[data-featured-banner]");
+  if (!lists.length && !banners.length) return;
 
   fetch("/data/press.json")
     .then(function (res) {
@@ -73,15 +116,19 @@
       return res.json();
     })
     .then(function (items) {
-      targets.forEach(function (list) {
-        var compact = list.getAttribute("data-press-compact") === "true";
-        render(list, items, compact);
+      lists.forEach(function (list) {
+        renderList(list, items);
+      });
+      banners.forEach(function (banner) {
+        renderBanner(banner, items);
       });
     })
     .catch(function () {
-      targets.forEach(function (list) {
-        list.innerHTML =
-          '<p class="muted">Press coverage will appear here shortly.</p>';
+      lists.forEach(function (list) {
+        if (!list.children.length) {
+          list.innerHTML =
+            '<li class="muted">Press coverage will appear here shortly.</li>';
+        }
       });
     });
 })();
