@@ -17,9 +17,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/site.css?v=5.1.3" />
+  <link rel="stylesheet" href="/css/site.css?v=5.1.4" />
 </head>
-<body>
+<body class="work-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle aria-label="Open menu">
     <span class="nav-toggle-bars" aria-hidden="true"></span>
@@ -39,32 +39,18 @@
     <div class="wrap">
       <h1 class="page-title">Work</h1>
       <p class="muted intro">What I’m working on, and what I’ve built.</p>
-      <div class="card-grid">
-        <a class="card" href="/projects/ai-desk-bots/">
-          <img class="card-cover" src="/images/projects/bots-placeholder.svg" alt="AI Desk Bots" width="600" height="315" loading="lazy" />
-          <div class="card-body">
-            <p class="card-status">draft</p>
-            <h3>AI Desk Bots</h3>
-            <p class="card-summary">Small screen-based AI assistants for teaching and demos: personality, prompts, and careful UX on physical devices.</p>
-          </div>
-        </a>
-        <a class="card" href="/projects/esp32-edge-assistant/">
-          <img class="card-cover" src="/images/projects/esp32-placeholder.svg" alt="ESP32 Edge Assistant" width="600" height="315" loading="lazy" />
-          <div class="card-body">
-            <p class="card-status">in-progress</p>
-            <h3>ESP32 Edge Assistant</h3>
-            <p class="card-summary">Experiments with ESP32 hardware and on-device AI assistants: screens, sensors, and careful offline-capable demos.</p>
-          </div>
-        </a>
-      </div>
+      <p class="press-status muted" data-work-status aria-live="polite"></p>
+      <ul class="press-list press-list-full" data-work-list data-work-page-size="3"></ul>
+      <nav class="press-pager" data-work-pager aria-label="Work pages"></nav>
     </div>
   </main>
   <footer class="site-footer">
     <div class="wrap">
       <span>© 2026 Kaan Esendemir</span>
-      <span class="site-version">v5.1.3</span>
+      <span class="site-version">v5.1.4</span>
     </div>
   </footer>
-  <script src="/js/site.js?v=5.1.3" defer></script>
+  <script src="/js/site.js?v=5.1.4" defer></script>
+  <script src="/js/work.js?v=5.1.4" defer></script>
 </body>
 </html>

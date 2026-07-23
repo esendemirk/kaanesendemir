@@ -1,5 +1,5 @@
 (function () {
-  var PAGE_SIZE = 4;
+  var PAGE_SIZE = 3;
 
   function escapeHtml(str) {
     return String(str || "")
@@ -179,24 +179,19 @@
       }
 
       if (pager) {
-        if (totalPages <= 1) {
-          pager.innerHTML = "";
-          pager.hidden = true;
-        } else {
-          pager.hidden = false;
-          pager.innerHTML =
-            '<button type="button" class="press-page-btn" data-press-prev' +
-            (page <= 1 ? " disabled" : "") +
-            ">Previous</button>" +
-            '<span class="press-page-label">Page ' +
-            page +
-            " of " +
-            totalPages +
-            "</span>" +
-            '<button type="button" class="press-page-btn" data-press-next' +
-            (page >= totalPages ? " disabled" : "") +
-            ">Next</button>";
-        }
+        pager.hidden = false;
+        pager.innerHTML =
+          '<button type="button" class="press-page-btn press-page-arrow" data-press-prev' +
+          (page <= 1 ? " disabled" : "") +
+          ' aria-label="Previous page">‹</button>' +
+          '<span class="press-page-label">Page ' +
+          page +
+          " of " +
+          totalPages +
+          "</span>" +
+          '<button type="button" class="press-page-btn press-page-arrow" data-press-next' +
+          (page >= totalPages ? " disabled" : "") +
+          ' aria-label="Next page">›</button>';
       }
     }
 

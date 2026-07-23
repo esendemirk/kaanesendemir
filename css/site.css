@@ -169,18 +169,22 @@ body.page-home .site-footer {
   max-width: none;
 }
 
-.press-page .wrap {
+.press-page .wrap,
+.work-page .wrap {
   max-width: min(1480px, 100%);
   text-align: left;
 }
 
 .press-page .page-title,
-.press-page .intro {
+.press-page .intro,
+.work-page .page-title,
+.work-page .intro {
   text-align: left;
   max-width: none;
 }
 
-.press-page .intro {
+.press-page .intro,
+.work-page .intro {
   margin-left: 0;
   margin-right: 0;
 }
@@ -373,6 +377,15 @@ body.page-home .site-footer {
   font-size: 0.85rem;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
+  min-width: 6.5rem;
+  text-align: center;
+}
+
+.press-page-arrow {
+  min-width: 40px;
+  padding-inline: 0.65rem;
+  font-size: 1.25rem;
+  line-height: 1;
 }
 
 body::before {
@@ -1658,7 +1671,8 @@ a.jump-pill:hover {
     padding-left: var(--nav-w);
   }
 
-  .press-page .wrap {
+  .press-page .wrap,
+  .work-page .wrap {
     max-width: min(1600px, calc(100vw - var(--nav-w) - 2 * var(--gutter)));
   }
 
