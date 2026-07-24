@@ -189,10 +189,15 @@ body.page-home .site-footer {
 
 .press-page .wrap,
 .work-page .wrap,
-.about-page .wrap,
-.project-page .wrap {
+.about-page .wrap {
   max-width: min(1480px, 100%);
   text-align: left;
+}
+
+.project-page .wrap {
+  max-width: min(48rem, 100%);
+  text-align: left;
+  padding-inline: max(0.85rem, calc(var(--gutter) * 0.7));
 }
 
 .press-page .page-title,
@@ -1288,6 +1293,7 @@ button.profile-link {
 
 .project-media {
   margin: 0 0 1.5rem;
+  max-width: 36rem;
 }
 
 .date,
@@ -1315,6 +1321,10 @@ button.profile-link {
 
 .cover {
   width: 100%;
+  max-width: 36rem;
+  max-height: 20rem;
+  object-fit: cover;
+  object-position: center;
   border-radius: 10px;
   border: 1px solid var(--line);
   margin: 0;
@@ -1879,9 +1889,13 @@ a.jump-pill:hover {
 
   .press-page .wrap,
   .work-page .wrap,
-  .about-page .wrap,
-  .project-page .wrap {
+  .about-page .wrap {
     max-width: min(1600px, calc(100vw - var(--nav-w) - 2 * var(--gutter)));
+  }
+
+  .project-page .wrap {
+    max-width: min(48rem, calc(100vw - var(--nav-w) - 2 * var(--gutter)));
+    padding-inline: 1.25rem;
   }
 
   .press-row-title {
