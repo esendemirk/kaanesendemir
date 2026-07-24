@@ -50,7 +50,8 @@
   document.querySelectorAll("[data-copy-link]").forEach(function (btn) {
     btn.addEventListener("click", async function () {
       var url = btn.getAttribute("data-url") || location.href;
-      var status = btn.parentElement && btn.parentElement.querySelector("[data-copy-status]");
+      var root = btn.closest("[data-share-tools]") || btn.parentElement;
+      var status = root && root.querySelector("[data-copy-status]");
       try {
         await navigator.clipboard.writeText(url);
         setStatus(status, "Link copied");

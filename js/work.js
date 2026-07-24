@@ -24,11 +24,9 @@
     var doc = new DOMParser().parseFromString(html, "text/html");
     var titleEl = doc.querySelector("h1");
     var summaryEl = doc.querySelector(".summary");
-    var statusEl = doc.querySelector(".status-label");
     var coverEl = doc.querySelector("img.cover");
     var title = titleEl ? titleEl.textContent.trim() : "Untitled";
     var description = summaryEl ? summaryEl.textContent.trim() : "";
-    var statusLabel = statusEl ? statusEl.textContent.trim() : "";
     var image = coverEl
       ? absUrl(coverEl.getAttribute("src") || "", pageUrl)
       : "";
@@ -37,7 +35,6 @@
       url: pageUrl,
       title: title,
       description: description,
-      status: statusLabel,
       image: image,
     };
   }
@@ -57,11 +54,6 @@
       '<li class="press-row">' +
       thumb +
       '<div class="press-row-main">' +
-      (item.status
-        ? '<p class="press-meta"><span class="press-outlet">' +
-          escapeHtml(item.status) +
-          "</span></p>"
-        : "") +
       '<a class="press-row-title" href="' +
       escapeHtml(item.url) +
       '">' +

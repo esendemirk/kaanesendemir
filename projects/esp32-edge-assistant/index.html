@@ -4,24 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>ESP32 Edge Assistant | Kaan Esendemir</title>
-  <meta name="description" content="Kaan Esendemir is an Enterprise AI Architect and Adjunct Instructor focused on enterprise AI systems, architecture, and education." />
+  <meta name="description" content="Experiments with ESP32 hardware and on-device AI assistants: screens, sensors, and careful offline-capable demos." />
   <link rel="canonical" href="https://kaanesendemir.com/projects/esp32-edge-assistant/" />
   <meta name="theme-color" content="#1A2E3B" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://kaanesendemir.com/projects/esp32-edge-assistant/" />
   <meta property="og:title" content="ESP32 Edge Assistant | Kaan Esendemir" />
-  <meta property="og:description" content="Kaan Esendemir is an Enterprise AI Architect and Adjunct Instructor focused on enterprise AI systems, architecture, and education." />
+  <meta property="og:description" content="Experiments with ESP32 hardware and on-device AI assistants: screens, sensors, and careful offline-capable demos." />
   <meta property="og:image" content="https://kaanesendemir.com/images/projects/esp32-placeholder.svg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/site.css?v=5.7.4" />
+  <link rel="stylesheet" href="/css/site.css?v=5.8.0" />
 </head>
-<body>
-    <a class="skip-link" href="#main">Skip to content</a>
+<body class="project-page">
+  <a class="skip-link" href="#main">Skip to content</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle aria-label="Open menu">
     <span class="nav-toggle-bars" aria-hidden="true"></span>
   </button>
@@ -37,39 +37,53 @@
       </nav>
     </div>
   </aside>
-<main id="main" class="section">
-    <article class="wrap article">
-      <p class="status-label">in-progress</p>
-      <h1>ESP32 Edge Assistant</h1>
-      <p class="summary">Experiments with ESP32 hardware and on-device AI assistants: screens, sensors, and careful offline-capable demos.</p>
-      <div class="share-icons">
-        <a class="share-icon" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fkaanesendemir.com%2Fprojects%2Fesp32-edge-assistant%2F" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn" title="Share on LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
-          </svg>
-        </a>
-        <button class="share-icon" type="button" data-copy-link data-url="https://kaanesendemir.com/projects/esp32-edge-assistant/" aria-label="Copy link" title="Copy link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-          </svg>
-        </button>
+  <main id="main" class="section">
+    <article class="wrap article" data-share-tools>
+      <header class="project-header">
+        <h1>ESP32 Edge Assistant</h1>
+        <p class="summary">Experiments with ESP32 hardware and on-device AI assistants: screens, sensors, and careful offline-capable demos.</p>
+        <ul class="profile-links project-share" aria-label="Share">
+          <li>
+            <a class="profile-link profile-link--linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fkaanesendemir.com%2Fprojects%2Fesp32-edge-assistant%2F" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn" title="Share on LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <button class="profile-link profile-link--copy" type="button" data-copy-link data-url="https://kaanesendemir.com/projects/esp32-edge-assistant/" aria-label="Copy link" title="Copy link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M16 2a2 2 0 0 1 1.995 1.85L18 4h1a3 3 0 0 1 2.995 2.824L22 7v12a3 3 0 0 1-2.824 2.995L19 22H7a3 3 0 0 1-2.995-2.824L4 19V7a3 3 0 0 1 2.824-2.995L7 4h1a2 2 0 0 1 1.85-1.995L10 2h6zm0 2h-6v2h6V4zM7 6a1 1 0 0 0-.993.883L6 7v12a1 1 0 0 0 .883.993L7 20h12a1 1 0 0 0 .993-.883L20 19V7a1 1 0 0 0-.883-.993L19 6H7zm3 4h6a1 1 0 1 1 0 2h-6a1 1 0 1 1 0-2zm0 4h6a1 1 0 1 1 0 2h-6a1 1 0 1 1 0-2zm0 4h4a1 1 0 1 1 0 2h-4a1 1 0 1 1 0-2z"/>
+              </svg>
+            </button>
+          </li>
+        </ul>
         <p class="share-status" data-copy-status aria-live="polite"></p>
-      </div>
-      <img class="cover" src="/images/projects/esp32-placeholder.svg" alt="ESP32 Edge Assistant" width="1200" height="630" />
+      </header>
+      <figure class="project-media">
+        <img class="cover" src="/images/projects/esp32-placeholder.svg" alt="ESP32 Edge Assistant" width="1200" height="630" />
+      </figure>
       <div class="body">
-        <p>Building small, real devices that make AI feel approachable: not theoretical.</p>
-        <p>This project tracks ESP32 experiments: local interaction, constrained compute, and demos you can show on a desk without a data center.</p>
-        <p><strong>What’s next:</strong> screen-based UI, prompt flows tuned for short interactions, and notes on what works offline.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum.</p>
+        <h2>What we built</h2>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui.</p>
+        <ul>
+          <li>Fusce dapibus, tellus ac cursus commodo</li>
+          <li>Maecenas sed diam eget risus varius blandit</li>
+          <li>Etiam porta sem malesuada magna mollis euismod</li>
+        </ul>
+        <h2>Approach</h2>
+        <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
       </div>
     </article>
   </main>
   <footer class="site-footer">
     <div class="wrap">
       <span>© 2026 Kaan Esendemir</span>
-      <span class="site-version">v5.7.4</span>
+      <span class="site-version">v5.8.0</span>
     </div>
   </footer>
-  <script src="/js/site.js?v=5.7.4" defer></script>
+  <script src="/js/site.js?v=5.8.0" defer></script>
 </body>
 </html>
