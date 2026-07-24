@@ -254,10 +254,6 @@ body.page-home .site-footer {
   margin-bottom: 0;
 }
 
-.work-page .press-status {
-  text-align: center;
-}
-
 .press-row {
   display: grid;
   grid-template-columns: 96px 1fr;

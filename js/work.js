@@ -2,7 +2,6 @@
   var PAGE_SIZE = 3;
   var list = document.querySelector("[data-work-list]");
   var pager = document.querySelector("[data-work-pager]");
-  var status = document.querySelector("[data-work-status]");
   if (!list) return;
 
   function escapeHtml(str) {
@@ -112,20 +111,6 @@
           '<li class="press-empty muted">No work to show yet.</li>';
       } else {
         list.innerHTML = slice.map(rowHtml).join("");
-      }
-
-      if (status) {
-        if (!items.length) {
-          status.textContent = "0 results";
-        } else {
-          status.textContent =
-            "Showing " +
-            (start + 1) +
-            "–" +
-            (start + slice.length) +
-            " of " +
-            items.length;
-        }
       }
 
       renderPager(pager, page, totalPages, "data-work-prev", "data-work-next");
