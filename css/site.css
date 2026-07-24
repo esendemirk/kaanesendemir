@@ -1264,7 +1264,7 @@ body.page-home .featured-banner.hero-reveal {
 
 .project-share {
   justify-content: flex-start;
-  margin: 0 0 0.35rem;
+  margin: 0 0 1.15rem;
 }
 
 button.profile-link {
@@ -1388,14 +1388,6 @@ button.profile-link {
 .breadcrumbs .sep {
   color: var(--line);
   user-select: none;
-}
-
-.share-status {
-  margin: 0 0 1rem;
-  min-height: 1.1em;
-  font-size: 0.78rem;
-  color: var(--muted);
-  text-align: left;
 }
 
 /* Vision */

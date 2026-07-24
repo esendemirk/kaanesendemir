@@ -4,6 +4,6 @@
   <url><loc>https://kaanesendemir.com/about/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://kaanesendemir.com/press/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://kaanesendemir.com/projects/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://kaanesendemir.com/projects/ai-desk-bots/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://kaanesendemir.com/projects/esp32-edge-assistant/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://kaanesendemir.com/projects/project-one/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://kaanesendemir.com/projects/project-two/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

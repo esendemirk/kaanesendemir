@@ -1,8 +1,4 @@
 (function () {
-  function setStatus(el, message) {
-    if (el) el.textContent = message;
-  }
-
   var navToggle = document.querySelector("[data-nav-toggle]");
   var navBackdrop = document.querySelector("[data-nav-backdrop]");
   var siteNav = document.querySelector("[data-site-nav]");
@@ -50,13 +46,10 @@
   document.querySelectorAll("[data-copy-link]").forEach(function (btn) {
     btn.addEventListener("click", async function () {
       var url = btn.getAttribute("data-url") || location.href;
-      var root = btn.closest("[data-share-tools]") || btn.parentElement;
-      var status = root && root.querySelector("[data-copy-status]");
       try {
         await navigator.clipboard.writeText(url);
-        setStatus(status, "Link copied");
       } catch (err) {
-        setStatus(status, "Could not copy");
+        /* silent fail — no on-page status */
       }
     });
   });
