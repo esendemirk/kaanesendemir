@@ -188,13 +188,10 @@ body.page-home .site-footer {
 }
 
 .press-page .wrap,
-.work-page .wrap {
+.work-page .wrap,
+.about-page .wrap,
+.project-page .wrap {
   max-width: min(1480px, 100%);
-  text-align: left;
-}
-
-.about-page .wrap {
-  max-width: min(40rem, 100%);
   text-align: left;
 }
 
@@ -748,9 +745,10 @@ a.site-mark,
   justify-content: flex-start;
   width: fit-content;
   font-family: var(--font);
-  font-size: 0.95rem;
+  font-size: 1.9rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
+  line-height: 1;
   text-transform: uppercase;
   color: var(--text);
 }
@@ -1237,7 +1235,8 @@ body.page-home .featured-banner.hero-reveal {
 }
 
 .project-page .article {
-  max-width: 40rem;
+  max-width: none;
+  width: 100%;
   text-align: left;
 }
 
@@ -1879,12 +1878,10 @@ a.jump-pill:hover {
   }
 
   .press-page .wrap,
-  .work-page .wrap {
+  .work-page .wrap,
+  .about-page .wrap,
+  .project-page .wrap {
     max-width: min(1600px, calc(100vw - var(--nav-w) - 2 * var(--gutter)));
-  }
-
-  .about-page .wrap {
-    max-width: min(42rem, calc(100vw - var(--nav-w) - 2 * var(--gutter)));
   }
 
   .press-row-title {
@@ -1905,11 +1902,16 @@ a.jump-pill:hover {
     transform: none;
     box-shadow: none;
     background: transparent;
-    border-right: 1px solid transparent;
+    border-right: 1px solid rgba(26, 46, 59, 0.12);
   }
 
   .site-nav-inner {
     padding-top: 2.25rem;
+  }
+
+  .site-mark {
+    font-size: 2rem;
+    letter-spacing: 0.1em;
   }
 
   .anchor-nav {
