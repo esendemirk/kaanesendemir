@@ -265,7 +265,6 @@ body.page-home .site-footer {
   border-top: 1px solid var(--line);
 }
 
-.press-row--thumb,
 .work-page .press-row {
   grid-template-columns: 96px 1fr;
   gap: 1rem 1.15rem;
@@ -308,13 +307,11 @@ body.page-home .site-footer {
     padding: 1.4rem 0;
   }
 
-  .press-row--thumb,
   .work-page .press-row {
     grid-template-columns: 120px 1fr;
     gap: 1.15rem 1.5rem;
   }
 
-  .press-row--thumb .press-thumb,
   .work-page .press-thumb {
     width: 120px;
     height: 120px;

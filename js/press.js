@@ -49,23 +49,8 @@
       })
       .join('<span class="press-dot" aria-hidden="true">·</span>');
 
-    /* Remote thumbs only — never serve/store local /images/press assets */
-    var remoteThumb = /^https?:\/\//i.test(String(item.image || ""));
-    var thumb = remoteThumb
-      ? '<a class="press-thumb" href="' +
-        escapeHtml(item.url) +
-        '" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">' +
-        '<img src="' +
-        escapeHtml(item.image) +
-        '" alt="" width="160" height="90" loading="lazy" referrerpolicy="no-referrer" />' +
-        "</a>"
-      : "";
-
     return (
-      '<li class="press-row' +
-      (thumb ? " press-row--thumb" : "") +
-      '">' +
-      thumb +
+      '<li class="press-row">' +
       '<div class="press-row-main">' +
       '<p class="press-meta"><span class="press-outlet">' +
       escapeHtml(item.outlet) +
