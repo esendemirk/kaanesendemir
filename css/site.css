@@ -171,7 +171,7 @@ body.page-home .site-footer {
   }
 }
 
-/* Press list: full-width rows with small left thumbnail */
+/* Press list: full-width text rows */
 .press-list {
   list-style: none;
   margin: 0;
@@ -258,11 +258,17 @@ body.page-home .site-footer {
 
 .press-row {
   display: grid;
-  grid-template-columns: 96px 1fr;
-  gap: 1rem 1.15rem;
+  grid-template-columns: 1fr;
+  gap: 0;
   align-items: start;
   padding: 1.25rem 0;
   border-top: 1px solid var(--line);
+}
+
+.press-row--thumb,
+.work-page .press-row {
+  grid-template-columns: 96px 1fr;
+  gap: 1rem 1.15rem;
 }
 
 .press-row:last-child {
@@ -299,12 +305,17 @@ body.page-home .site-footer {
 
 @media (min-width: 720px) {
   .press-row {
-    grid-template-columns: 120px 1fr;
-    gap: 1.15rem 1.5rem;
     padding: 1.4rem 0;
   }
 
-  .press-thumb {
+  .press-row--thumb,
+  .work-page .press-row {
+    grid-template-columns: 120px 1fr;
+    gap: 1.15rem 1.5rem;
+  }
+
+  .press-row--thumb .press-thumb,
+  .work-page .press-thumb {
     width: 120px;
     height: 120px;
   }
@@ -1249,41 +1260,12 @@ body.page-home .home-voice.hero-reveal {
   text-decoration: underline;
 }
 
-/* Home hero subscribe — primary conversion, stays in first viewport */
-.hero-newsletter {
-  width: 100%;
-  max-width: 26rem;
-  margin: 0 auto 1.1rem;
-  text-align: center;
-}
-
-.hero-newsletter-kicker {
-  margin: 0 0 0.55rem;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--muted);
-  line-height: 1.35;
-}
-
-.newsletter--hero {
-  max-width: none;
-  margin-inline: 0;
-}
-
-.newsletter-row--inline {
-  width: 100%;
-}
-
-body.page-home .hero-newsletter.hero-reveal {
-  animation-delay: 360ms;
-}
-
 body.page-home .profile-links.hero-reveal {
-  animation-delay: 420ms;
+  animation-delay: 380ms;
 }
 
 body.page-home .featured-banner.hero-reveal {
-  animation-delay: 500ms;
+  animation-delay: 460ms;
 }
 
 /* Article / project detail */
@@ -1866,24 +1848,13 @@ a.jump-pill:hover {
 }
 
 @media (min-width: 560px) {
-  .newsletter-row,
-  .newsletter-row--inline {
+  .newsletter-row {
     grid-template-columns: 1fr auto;
   }
 
   .newsletter button {
     width: auto;
     min-width: 7.5rem;
-  }
-}
-
-@media (max-height: 760px) {
-  .hero-newsletter {
-    margin-bottom: 0.75rem;
-  }
-
-  .hero-newsletter-kicker {
-    font-size: 0.8rem;
   }
 }
 
